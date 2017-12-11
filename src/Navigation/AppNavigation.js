@@ -1,8 +1,9 @@
+import React from 'react'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import Login from '../components/Login'
 import { Text } from 'react-native'
 import SplashScene from '../components/SplashScene'
-import Map from '../components/Map'
+import MapScene from '../components/MapScene'
 import Appointment from '../components/Appointment'
 
 const DrawerStack = DrawerNavigator({

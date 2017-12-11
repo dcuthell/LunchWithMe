@@ -1,32 +1,23 @@
-import React, { Component } from 'react'
-import {
-  Container,
-  Header,
-  View,
-  Icon,
-  Button,
-  Title
-} from 'native-base'
 
-export default class SplashScene extends Component {
-  constructor(props)
-  {
-    super(props);
-  }
+import React from 'react'
+import { StyleSheet, Text, View, Image } from 'react-native'
 
-  render () {
-    const { theme, stores, toggleDrawer } = this.props
+export default class SplashScene extends React.Component {
 
+  render() {
     return (
-      <Container theme={theme}>
-        <Header>
-          <Button transparent
-            onPress={toggleDrawer}>
-              <Icon name='menu' />
-          </Button>
-          <Title>Maps</Title>
-        </Header>
-      </Container>
+      <View style={styles.container}>
+        <Text>Splash Scene</Text>
+      </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})

@@ -1,25 +1,23 @@
-import Drawer from 'react-native-drawer'
 
-class Application extends Component {
-  closeControlPanel = () => {
-    this._drawer.close()
-  };
-  openControlPanel = () => {
-    this._drawer.open()
-  };
+import React from 'react'
+import { StyleSheet, Text, View, Image } from 'react-native'
 
-  render () {
+export default class MainScreen extends React.Component {
+
+  render() {
     return (
-      <Drawer
-        type="displace"
-        content={<SideMenu toggleDrawer={this.toggleDrawer.bind(this)}
-        ref={(ref) => this._drawer = ref}
-        stores={this.state.store} navigator={this._navigator} theme={this.state.theme}/>}
-        onClose={this.closeDrawer.bind(this)}
-        onOpen={this.openDrawer
-        >
-        <MainView />
-      </Drawer>
+      <View style={styles.container}>
+        <Text>MainScreen</Text>
+      </View>
     )
   }
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 })

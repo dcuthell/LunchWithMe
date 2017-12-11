@@ -1,31 +1,23 @@
-import React, { Component } from 'react'
-import {
-  Container,
-  Header,
-  View,
-  Icon,
-  Button,
-  Title
-} from 'native-base'
 
-export default class MapScene extends Component {
-  constructor(props)
-  {
-    super(props);
-  }
+import React from 'react'
+import { StyleSheet, Text, View, Image } from 'react-native'
 
-  render () {
-    const { theme, stores, toggleDrawer } = this.props
+export default class MapScene extends React.Component {
+
+  render() {
     return (
-      <Container>
-        <Header>
-          <Button transparent
-            onPress={toggleDrawer}>
-              <Icon name='menu' />
-          </Button>
-          <Title>Maps</Title>
-        </Header>
-      </Container>
+      <View style={styles.container}>
+        <Text>MapScene</Text>
+      </View>
     )
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+})

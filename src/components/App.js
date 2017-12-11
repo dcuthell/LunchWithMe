@@ -1,17 +1,22 @@
 import React from 'react'
+import { Stylesheet } from 'react-native'
+import { Provider } from 'react-redux'
+import createStore from '../Redux'
+
 import { Text, AsyncStorage, View } from 'react-native'
 import { Drawer} from 'native-base'
 import { Navigator } from 'react-native'
 import { Button } from 'react-native'
 
+import ReduxNavigation from '../Navigation/ReduxNavigation'
 import Login from './Login'
-import SideMenu from './SideMenu'
 import Appointment from './Appointment'
 import MapScene from './MapScene'
 import SplashScene from './SplashScene'
-import PrimaryNav from '../Navigation/AppNavigation'
 
 import theme from '../theme/base-theme'
+
+const store = createStore()
 
 class App extends React.Component {
   constructor(props) {
@@ -64,23 +69,15 @@ componentWillMount() {
 
 
   render() {
-    // const user = this.state.user;
-    // if(user === null){
-    //   return (
-    //     //
-    //
-    //   );
-    // }
     return (
-      <View>
+      <Provider store={store}>
+      <View style={styles.container}>
+        <ReduxNavigation />
         <Text>LunchWithMe</Text>
       </View>
-
+      </Provider>
     )
   }
-
-
-
 }
 
 export default App;
