@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   header: {
-    fontSize: 30,
+
   },
   accountInput: {
     backgroundColor: 'blue',
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'green',
   },
   footer: {
-    fontSize: 30,
+    
   },
 
 });

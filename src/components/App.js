@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, AsyncStorage } from 'react-native';
-import Login from './Login';
+// import Login from './Login';
+import MapPage from './MapPage';
 
 class App extends React.Component {
   state = {
@@ -17,7 +18,9 @@ class App extends React.Component {
         console.log('AsyncStorage Setting Error: ' + error);
       }
     }
+    console.log('Setting state to: ' + user);
     this.setState({ user });
+
   }
 
   //Retrieves stored user object from AsyncStorage, and sets user state to same value
@@ -34,17 +37,18 @@ class App extends React.Component {
   }
 
   componentWillMount() {
-    this.setUserState();
-    this.getUserState();
+    console.log('hey');
+    AsyncStorage.clear();
   }
 
   render() {
     const user = this.state.user;
     if(user === null){
       return (
-        <Login
-          setUserState={this.setUserState}
-        />
+        <MapPage />
+        // <Login
+        //   setUserState={this.setUserState}
+        // />
         // <View style={styles.container}>
         //   <Text>LunchWithMe12</Text>
         // </View>

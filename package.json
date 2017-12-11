@@ -8,7 +8,9 @@
   },
   "dependencies": {
     "react": "16.0.0",
-    "react-native": "0.51.0"
+    "react-native": "0.51.0",
+    "react-native-map-clustering": "^1.2.8",
+    "react-native-maps": "^0.18.3"
   },
   "devDependencies": {
     "babel-eslint": "^8.0.3",
