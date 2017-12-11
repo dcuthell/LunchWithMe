@@ -8,7 +8,7 @@ import {
   Title
 } from 'native-base'
 
-export default class Map extends Component {
+export default class MapScene extends Component {
   constructor(props)
   {
     super(props);
@@ -16,9 +16,8 @@ export default class Map extends Component {
 
   render () {
     const { theme, stores, toggleDrawer } = this.props
-
     return (
-      <Container theme={theme}>
+      <Container>
         <Header>
           <Button transparent
             onPress={toggleDrawer}>

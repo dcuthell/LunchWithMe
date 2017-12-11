@@ -1,25 +1,32 @@
 import React, { Component } from 'react'
-import { Image } from 'react-native'
-import { View } from 'native-base'
+import {
+  Container,
+  Header,
+  View,
+  Icon,
+  Button,
+  Title
+} from 'native-base'
 
 export default class SplashScene extends Component {
-  constructor(props) {
-    super(props)
-  }
-  componentDidMount() {
-    const { stores } = this.props
-    setTimeout(() => {
-      this.props.navigator.replace({title: "Splash Scene", passProps: this.props})
-    }, stores.settings.SplashTime)
+  constructor(props)
+  {
+    super(props);
   }
 
-  render() {
-    const { settings } = this.props.stores
+  render () {
+    const { theme, stores, toggleDrawer } = this.props
+
     return (
-      <View style={{flex:1}}>Splash
-        // <Image style={{flex:1, width:null, height:null}} source={settings.SplashImg}/>
-      </View>
-      <Button></Button>
+      <Container theme={theme}>
+        <Header>
+          <Button transparent
+            onPress={toggleDrawer}>
+              <Icon name='menu' />
+          </Button>
+          <Title>Maps</Title>
+        </Header>
+      </Container>
     )
   }
 }
