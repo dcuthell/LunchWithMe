@@ -6,6 +6,7 @@ import SplashScene from '../components/SplashScene'
 import MapScene from '../components/MapScene'
 import Appointment from '../components/Appointment'
 import LoginScreen from '../components/LoginScreen'
+import DrawerContainer from '../components/DrawerContainer'
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -21,7 +22,7 @@ const DrawerStack = DrawerNavigator({
   AppointmentScene: { screen: Appointment },
 }, {
   gesturesEnabled: false,
-  contentComponent: () => <View style ={{ height: 150, width: 149, backgroundColor: '#bb8' }}/>
+  contentComponent: DrawerContainer
 })
 
 const DrawerNavigation = StackNavigator ({
