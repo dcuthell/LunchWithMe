@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native'
 import { Provider } from 'react-redux'
 import createStore from '../Redux'
 
-import { Text, AsyncStorage, View } from 'react-native'
+import { Text, AsyncStorage, View, Header} from 'react-native'
 import { Drawer} from 'native-base'
 import { Navigator } from 'react-native'
 import { Button } from 'react-native'
@@ -17,7 +17,6 @@ import SplashScene from './SplashScene'
 import theme from '../theme/base-theme'
 
 const store = createStore()
-
 
 const styles = StyleSheet.create({
   container: {
