@@ -2,6 +2,7 @@ import React from 'react'
 import { StyleSheet } from 'react-native'
 import { Provider } from 'react-redux'
 import createStore from '../Redux'
+import { createStyle } from 'react-native-theming'
 
 import { Text, AsyncStorage, View, Header} from 'react-native'
 import { Drawer} from 'native-base'
@@ -14,16 +15,35 @@ import Appointment from './Appointment'
 import MapScene from './MapScene'
 import SplashScene from './SplashScene'
 
-import theme from '../theme/base-theme'
 
 const store = createStore()
 
-const styles = StyleSheet.create({
+const styles = createStyle({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  }
+    backgroundColor: '@backgroundColor',
+  },
+  welcome: {
+    fontSize: 20,
+    textAlign: 'center',
+    margin: 10,
+    color: '@textColor',
+  },
+  instructions: {
+    textAlign: 'center',
+    color: '#888',
+    marginBottom: 5,
+  },
+  button: {
+    margin: 10,
+    padding: 10,
+    backgroundColor: '@buttonColor',
+    borderRadius: 3,
+    flex: 1,
+    alignItems: 'center',
+  },
 });
 
 class App extends React.Component {
@@ -32,7 +52,6 @@ class App extends React.Component {
     this.state = {
       toggled: false,
       user: null,
-      theme: theme
     }
   }
 
