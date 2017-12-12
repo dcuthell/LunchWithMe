@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stylesheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Provider } from 'react-redux'
 import createStore from '../Redux'
 
@@ -18,6 +18,15 @@ import theme from '../theme/base-theme'
 
 const store = createStore()
 
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  }
+});
+
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -27,14 +36,6 @@ class App extends React.Component {
       theme: theme
     }
   }
-  //
-  // const styles = StyleSheet.create({
-  //   container: {
-  //     flex: 1,
-  //     justifyContent: 'center',
-  //     alignItems: 'center',
-  //   }
-  // });
 
   //Takes user object to store outside of the app, and will set user state to same value(is that needed?)
   setUserState = async (user = null) => {

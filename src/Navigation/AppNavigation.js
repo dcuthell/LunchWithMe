@@ -26,12 +26,12 @@ const DrawerNavigation = StackNavigator ({
 })
 
 const PrimaryNav = StackNavigator({
-  // Login: { screen: Login },
+  SplashScene: { screen: SplashScene },
   drawerStack: { screen: DrawerNavigation }
 }, {
   headerMode: 'none',
   title: 'Main Screen',
-  initialRouteName: 'Main'
+  initialRouteName: 'SplashScene'
 })
 
 export default PrimaryNav

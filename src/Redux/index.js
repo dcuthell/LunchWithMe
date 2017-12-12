@@ -1,4 +1,4 @@
-import { combineReducers, createStore, applyMiddleware, compose } from 'react-redux'
+import { combineReducers, createStore, applyMiddleware, compose } from 'redux'
 import AppNavigation from '../Navigation/AppNavigation'
 
 const navReducer = (state, action) => {
