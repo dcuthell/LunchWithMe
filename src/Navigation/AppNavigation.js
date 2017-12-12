@@ -1,7 +1,7 @@
 import React from 'react'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import Login from '../components/Login'
-import { Text, Animated, Easing } from 'react-native'
+import { Text, Animated, Easing, Button, View } from 'react-native'
 import SplashScene from '../components/SplashScene'
 import MapScene from '../components/MapScene'
 import Appointment from '../components/Appointment'
@@ -20,7 +20,8 @@ const DrawerStack = DrawerNavigator({
   MapScene: { screen: MapScene },
   AppointmentScene: { screen: Appointment },
 }, {
-  // gesturesEnabled: false
+  gesturesEnabled: false,
+  contentComponent: () => <View style ={{ height: 150, width: 149, backgroundColor: '#bb8' }}/>
 })
 
 const DrawerNavigation = StackNavigator ({
@@ -31,8 +32,17 @@ const DrawerNavigation = StackNavigator ({
     headerStyle: {backgroundColor: 'green'},
     title: 'Welcome!',
     // gesturesEnabled: false,
-    headerLeft: <Text onPress={() =>
-    navigation.navigate('DrawerOpen')}>Menu</Text>
+    headerLeft: (
+      <Text
+        onPress={() => {
+          console.log(navigation);
+          console.log("hello");
+          navigation.navigate('DrawerOpen');
+        }}
+      >
+        Menu
+      </Text>
+    )
   })
 })
 const LoginStack = StackNavigator({
