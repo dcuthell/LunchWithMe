@@ -24,6 +24,11 @@ export default class DrawerContainer extends React.Component {
           style={styles.uglyDrawerItem}>
           Find Lunches
         </Text>
+        <Text
+          onPress={() => navigation.navigate('profile')}
+          style={styles.uglyDrawerItem}>
+          My Profile
+        </Text>
       </View>
     )
   }

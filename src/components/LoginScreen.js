@@ -14,7 +14,7 @@ export default class LoginScreen extends React.Component {
 
         <Image style={styles.logo} source={require('../images/lunchwithlogo_small.png')} />
 
-      <View style={styles.row}>
+      <View>
           <Text
             style={styles.linky}
             onPress={() => this.props.navigation.navigate('signupScreen')} >
@@ -59,6 +59,7 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
     fontSize: 14,
     color: 'white',
+    justifyContent: 'center'
   },
   logo: {
     marginTop: 200,

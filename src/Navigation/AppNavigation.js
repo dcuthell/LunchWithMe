@@ -9,6 +9,7 @@ import LoginScreen from '../components/LoginScreen'
 import SignupScreen from '../components/SignupScreen'
 import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
 import Login from '../components/Login'
+import Profile from '../components/Profile'
 
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 
@@ -24,6 +25,7 @@ const DrawerStack = DrawerNavigator({
   splashScene: { screen: SplashScene },
   mapScene: { screen: MapScene },
   appointment: { screen: Appointment },
+  profile: { screen: Profile }
 }, {
   gesturesEnabled: false,
   contentComponent: (props) => <DrawerContainer {...props} />

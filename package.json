@@ -14,6 +14,7 @@
     "react-native-checkbox": "^2.0.0",
     "react-native-custom-checkbox": "^1.5.1",
     "react-native-drawer": "^2.5.0",
+    "react-native-elements": "^0.18.5",
     "react-native-material-design": "^0.3.7",
     "react-native-theming": "^1.0.9",
     "react-navigation": "^1.0.0-beta.21",
