@@ -4,6 +4,7 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 
 export default class Appointment extends React.Component {
 
+
   render() {
     return (
       <View style={styles.container}>
@@ -16,7 +17,7 @@ export default class Appointment extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'purple',
+    backgroundColor: '#ffffff',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -30,18 +30,17 @@ const DrawerNavigation = StackNavigator ({
 }, {
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
-    headerStyle: {backgroundColor: 'blue'},
+    headerStyle: {backgroundColor: '#ffffff'},
     title: 'Welcome!',
     // gesturesEnabled: false,
     headerLeft: (
-      <Text
-        onPress={() => {
-          console.log(navigation);
-          console.log("hello");
-          navigation.navigate('DrawerOpen');
-        }}
-      >
-        Menu
+      <Text onPress={() => {
+        if (navigation.state.index === 0) {
+          navigation.navigate('DrawerOpen')
+        } else {
+          navigation.navigate('DrawerClose')
+        }
+      }}> Menu
       </Text>
     )
   })

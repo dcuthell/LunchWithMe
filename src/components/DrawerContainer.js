@@ -12,17 +12,17 @@ export default class DrawerContainer extends React.Component {
           onPress={() =>
           navigation.navigate('splashScene')}
           style={styles.uglyDrawerItem}>
-          SplashScene
+          Home
         </Text>
         <Text
           onPress={() => navigation.navigate('appointment')}
           style={styles.uglyDrawerItem}>
-          Appointment
+          My Lunches
         </Text>
         <Text
           onPress={() => navigation.navigate('mapScene')}
           style={styles.uglyDrawerItem}>
-          MapScene
+          Find Lunches
         </Text>
       </View>
     )
@@ -31,19 +31,19 @@ export default class DrawerContainer extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f6f6f6',
+    backgroundColor: '#42b3f4',
     paddingTop: 100,
     paddingHorizontal: 20
   },
   uglyDrawerItem: {
     fontSize: 18,
-    fontWeight: 'bold',
-    color: '#E73536',
-    padding: 15,
+    fontFamily: 'Avenir',
+    color: 'white',
+    padding: 10,
     margin: 5,
     borderRadius: 2,
-    borderColor: '#E73536',
-    borderWidth: 1,
+    borderColor: 'white',
+    borderWidth: .3,
     textAlign: 'center'
   }
 })
