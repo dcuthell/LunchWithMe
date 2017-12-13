@@ -7,6 +7,8 @@ import Appointment from '../components/Appointment'
 import DrawerContainer from '../components/DrawerContainer'
 import LoginScreen from '../components/LoginScreen'
 import SignupScreen from '../components/SignupScreen'
+import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
+
 
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 
@@ -55,7 +57,10 @@ const LoginStack = StackNavigator({
 }, {
   headerMode: 'float',
   navigationOptions: {
-    headerStyle: {backgroundColor: 'red'},
+    headerStyle: {backgroundColor: '#42b3f4'},
+    headerTitleStyle: {
+      color: 'white'
+    },
     title: 'You are not logged in'
   }
 })
