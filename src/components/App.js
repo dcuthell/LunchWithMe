@@ -1,9 +1,9 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import createStore from '../Redux'
-import { createStyle } from 'react-native-theming'
+import DrawerContainer from '../components/DrawerContainer'
 
-import { Text, AsyncStorage, View, Header, StyleSheet } from 'react-native'
+import { Text, AsyncStorage, View, Header, StyleSheet, StatusBar } from 'react-native'
 import { Drawer} from 'native-base'
 import { Navigator } from 'react-native'
 import { Button } from 'react-native'
@@ -20,9 +20,9 @@ const store = createStore()
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+    flex: 1,
+    backgroundColor: '#fff'
+    },
 });
 
 class App extends React.Component {
@@ -30,9 +30,9 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-      <View>
+      <View style={ styles.container }>
+        <StatusBar barStyle='light-content' />
         <ReduxNavigation />
-      <Text style={styles.container}>LunchWithMe</Text>
       </View>
       </Provider>
     )

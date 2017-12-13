@@ -1,14 +1,12 @@
-
 import React from 'react'
-import { Navigation, StyleSheet, Text, View, Image, Button, Alert } from 'react-native'
-import { StackNavigator, DrawerNavigator } from 'react-navigation'
+import { StyleSheet, Text, View, Image } from 'react-native'
 
 export default class SplashScene extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>Splash Scene</Text>
+      <View style={styles.container}>
+        <Text>Screen 1</Text>
       </View>
     )
   }
@@ -17,7 +15,7 @@ export default class SplashScene extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'blue',
     alignItems: 'center',
     justifyContent: 'center',
   },

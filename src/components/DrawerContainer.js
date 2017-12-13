@@ -5,21 +5,22 @@ import { NavigationActions } from 'react-navigation'
 export default class DrawerContainer extends React.Component {
 
   render() {
-    const { navigation} = this.props
+    const { navigation } = this.props
     return (
       <View style = { styles.container }>
         <Text
-          onPress={() => navigation.navigate('SplashScene')}
+          onPress={() =>
+          navigation.navigate('splashScene')}
           style={styles.uglyDrawerItem}>
           SplashScene
         </Text>
         <Text
-          onPress={() => navigation.navigate('Appointment')}
+          onPress={() => navigation.navigate('appointment')}
           style={styles.uglyDrawerItem}>
           Appointment
         </Text>
         <Text
-          onPress={() => navigation.navigate('MapScene')}
+          onPress={() => navigation.navigate('mapScene')}
           style={styles.uglyDrawerItem}>
           MapScene
         </Text>
@@ -31,7 +32,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f6f6f6',
-    paddingTop: 40,
+    paddingTop: 100,
     paddingHorizontal: 20
   },
   uglyDrawerItem: {

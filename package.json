@@ -1,16 +1,18 @@
 {
-  "name": "LunchWithMe",
+  "name": "lunchwithme",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "react-devtools": "react-devtools"
   },
   "dependencies": {
     "native-base": "^2.3.5",
     "react": "16.0.0",
     "react-native": "0.51.0",
     "react-native-drawer": "^2.5.0",
+    "react-native-material-design": "^0.3.7",
     "react-native-theming": "^1.0.9",
     "react-navigation": "^1.0.0-beta.21",
     "react-redux": "^5.0.6",
@@ -23,10 +25,23 @@
     "eslint": "^4.13.0",
     "eslint-plugin-react": "^7.5.1",
     "jest": "21.2.1",
+    "react-devtools": "^3.0.0",
     "react-test-renderer": "16.0.0",
     "redux-devtools": "^3.4.1"
   },
   "jest": {
     "preset": "react-native"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcuthell/LunchWithMe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dcuthell/LunchWithMe/issues"
+  },
+  "homepage": "https://github.com/dcuthell/LunchWithMe#readme",
+  "description": ""
 }

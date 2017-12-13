@@ -1,12 +1,12 @@
 import React from 'react'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
-import Login from '../components/Login'
 import { Text, Animated, Easing, Button, View } from 'react-native'
 import SplashScene from '../components/SplashScene'
 import MapScene from '../components/MapScene'
 import Appointment from '../components/Appointment'
-import LoginScreen from '../components/LoginScreen'
 import DrawerContainer from '../components/DrawerContainer'
+import LoginScreen from '../components/LoginScreen'
+import ReduxNavigation from '../Navigation/ReduxNavigation'
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -17,12 +17,12 @@ const noTransitionConfig = () => ({
 })
 
 const DrawerStack = DrawerNavigator({
-  SplashScene: { screen: SplashScene },
-  MapScene: { screen: MapScene },
-  AppointmentScene: { screen: Appointment },
+  splashScene: { screen: SplashScene },
+  mapScene: { screen: MapScene },
+  appointment: { screen: Appointment },
 }, {
   gesturesEnabled: false,
-  contentComponent: DrawerContainer
+  contentComponent: (props) => <DrawerContainer {...props} />
 })
 
 const DrawerNavigation = StackNavigator ({
@@ -30,7 +30,7 @@ const DrawerNavigation = StackNavigator ({
 }, {
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
-    headerStyle: {backgroundColor: 'green'},
+    headerStyle: {backgroundColor: 'blue'},
     title: 'Welcome!',
     // gesturesEnabled: false,
     headerLeft: (
@@ -48,7 +48,7 @@ const DrawerNavigation = StackNavigator ({
 })
 const LoginStack = StackNavigator({
   loginScreen: { screen: LoginScreen },
-  SplashScene: { screen: SplashScene },
+  splashScene: { screen: SplashScene }
   // forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
   headerMode: 'float',
@@ -60,10 +60,10 @@ const LoginStack = StackNavigator({
 
 const PrimaryNav = StackNavigator({
   loginStack: { screen: LoginStack },
-  drawerStack: { screen: DrawerNavigation }
+  drawerStack: { screen: DrawerNavigation },
 }, {
   headerMode: 'none',
-  title: 'Splash Screen',
+  title: 'Main',
   initialRouteName: 'drawerStack',
   transitionConfig: noTransitionConfig
 })
