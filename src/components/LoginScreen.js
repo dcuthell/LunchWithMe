@@ -4,6 +4,7 @@ import { Navigation, StyleSheet, Text, View, Image, Button, Alert } from 'react-
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import ForgottenPasswordScreen from './ForgottenPasswordScreen'
 import SignupScreen from './SignupScreen'
+import Login from './Login'
 
 export default class LoginScreen extends React.Component {
 
@@ -25,13 +26,17 @@ export default class LoginScreen extends React.Component {
             onPress={() => this.props.navigation.navigate('forgottenPasswordScreen')} >
                Forgot Password
           </Text>
+          <Text
+            style={styles.linky}
+            onPress={() => this.props.navigation.navigate('login')} >
+            Login
+          </Text>
+          <Text
+            style={styles.linky}
+            onPress={() => this.props.navigation.navigate('drawerStack')} >
+            "Logged In"
+          </Text>
         </View>
-
-        <Text
-          style={styles.linky}
-          onPress={() => this.props.navigation.navigate('drawerStack')} >
-          Pretend we logged in
-        </Text>
       </View>
     )
   }

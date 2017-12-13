@@ -6,7 +6,7 @@ export default class SplashScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>SPLASH PAGE!!!!</Text>
+        <Text>First Screen</Text>
       </View>
     )
   }

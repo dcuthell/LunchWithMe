@@ -5,7 +5,6 @@ export default class SignupScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I am Signup Screen</Text>
       </View>
     )
   }

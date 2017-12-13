@@ -8,7 +8,7 @@ import DrawerContainer from '../components/DrawerContainer'
 import LoginScreen from '../components/LoginScreen'
 import SignupScreen from '../components/SignupScreen'
 import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
-
+import Login from '../components/Login'
 
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 
@@ -53,6 +53,7 @@ const LoginStack = StackNavigator({
   loginScreen: { screen: LoginScreen },
   signupScreen: { screen: SignupScreen },
   splashScene: { screen: SplashScene },
+  login: { screen: Login },
   forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
   headerMode: 'float',
