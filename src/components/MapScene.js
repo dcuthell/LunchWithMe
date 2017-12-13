@@ -8,7 +8,14 @@ export default class MapScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>MAP!</Text>
+        <Image
+          style={{
+                    backgroundColor: '#ccc',
+                    flex: 1,
+                    width: '100%',
+                    justifyContent: 'center',
+                  }}
+          source={require('../images/map_dummy.png')} />
       </View>
     )
   }
