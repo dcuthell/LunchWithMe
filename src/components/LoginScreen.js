@@ -10,19 +10,22 @@ export default class LoginScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>I am Login Screen</Text>
 
-        <Text
-          style={styles.linky}
-          onPress={() => this.props.navigation.navigate('signupScreen')} >
-          Go to Signup
-        </Text>
+        <Image style={styles.logo} source={require('../images/lunchwithlogo_small.png')} />
 
-        <Text
-          style={styles.linky}
-          onPress={() => this.props.navigation.navigate('forgottenPasswordScreen')} >
-          Go to Forgot Password
-        </Text>
+      <View style={styles.row}>
+          <Text
+            style={styles.linky}
+            onPress={() => this.props.navigation.navigate('signupScreen')} >
+            Signup
+          </Text>
+
+          <Text
+            style={styles.linky}
+            onPress={() => this.props.navigation.navigate('forgottenPasswordScreen')} >
+               Forgot Password
+          </Text>
+        </View>
 
         <Text
           style={styles.linky}
@@ -39,13 +42,25 @@ export default class LoginScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white',
+    backgroundColor: '#42b3f4',
     alignItems: 'center',
-    justifyContent: 'center',
   },
   title: {
     fontFamily: 'Avenir',
     fontSize: 25,
-    color: 'gray'
+    color: 'gray',
+  },
+  linky: {
+    fontFamily: 'Avenir',
+    fontSize: 14,
+    color: 'white',
+  },
+  logo: {
+    marginTop: 200,
+  },
+  row: {
+    flexDirection: 'row',
+    flex: 1,
+    justifyContent: 'center',
   }
 })
