@@ -6,6 +6,8 @@ import MapScene from '../components/MapScene'
 import Appointment from '../components/Appointment'
 import DrawerContainer from '../components/DrawerContainer'
 import LoginScreen from '../components/LoginScreen'
+import SignupScreen from '../components/SignupScreen'
+
 import ReduxNavigation from '../Navigation/ReduxNavigation'
 
 const noTransitionConfig = () => ({
@@ -32,7 +34,7 @@ const DrawerNavigation = StackNavigator ({
   navigationOptions: ({navigation}) => ({
     headerStyle: {backgroundColor: '#ffffff'},
     title: 'Welcome!',
-    // gesturesEnabled: false,
+    gesturesEnabled: false,
     headerLeft: (
       <Text onPress={() => {
         if (navigation.state.index === 0) {
@@ -47,8 +49,9 @@ const DrawerNavigation = StackNavigator ({
 })
 const LoginStack = StackNavigator({
   loginScreen: { screen: LoginScreen },
-  splashScene: { screen: SplashScene }
-  // forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
+  signupScreen: { screen: SignupScreen },
+  splashScene: { screen: SplashScene },
+  forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
   headerMode: 'float',
   navigationOptions: {
@@ -63,7 +66,7 @@ const PrimaryNav = StackNavigator({
 }, {
   headerMode: 'none',
   title: 'Main',
-  initialRouteName: 'drawerStack',
+  initialRouteName: 'loginStack',
   transitionConfig: noTransitionConfig
 })
 
