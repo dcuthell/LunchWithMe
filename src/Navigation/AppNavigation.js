@@ -1,6 +1,6 @@
 import React from 'react'
 import { StackNavigator, DrawerNavigator } from 'react-navigation'
-import { Text, Animated, Easing, Button, View } from 'react-native'
+import { Text, Animated, Easing, Button, View, TouchableHighlight, TouchableOpacity, Image } from 'react-native'
 import SplashScene from '../components/SplashScene'
 import MapScene from '../components/MapScene'
 import Appointment from '../components/Appointment'
@@ -34,21 +34,27 @@ const DrawerNavigation = StackNavigator ({
 }, {
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
-    headerStyle: {backgroundColor: '#ffffff'},
+    headerStyle: {backgroundColor: '#42b3f4'},
     title: 'Welcome!',
     gesturesEnabled: false,
     headerLeft: (
-      <Text onPress={() => {
-        if (navigation.state.index === 0) {
-          navigation.navigate('DrawerOpen')
-        } else {
-          navigation.navigate('DrawerClose')
-        }
-      }}> Menu
-      </Text>
+      <TouchableOpacity
+        style={{paddingLeft: 10}}
+        onPress={() => {
+          if (navigation.state.index === 0) {
+            navigation.navigate('DrawerOpen')
+          } else {
+            navigation.navigate('DrawerClose')
+          }
+        }}>
+        <Image
+          source={require('../images/hamburger_menu_small.png')}>
+        </Image>
+      </TouchableOpacity>
     )
   })
 })
+
 const LoginStack = StackNavigator({
   loginScreen: { screen: LoginScreen },
   signupScreen: { screen: SignupScreen },
