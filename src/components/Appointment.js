@@ -7,7 +7,7 @@ export default class Appointment extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Appointment</Text>
+        <Text>MY LUNCHES!!!!</Text>
       </View>
     )
   }
@@ -16,7 +16,7 @@ export default class Appointment extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'purple',
     alignItems: 'center',
     justifyContent: 'center',
   },

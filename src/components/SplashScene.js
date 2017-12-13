@@ -6,7 +6,7 @@ export default class SplashScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Screen 1</Text>
+        <Text>SPLASH PAGE!!!!</Text>
       </View>
     )
   }
@@ -15,7 +15,7 @@ export default class SplashScene extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'green',
     alignItems: 'center',
     justifyContent: 'center',
   },

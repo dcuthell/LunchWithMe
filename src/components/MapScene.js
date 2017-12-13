@@ -8,7 +8,7 @@ export default class MapScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>MapScene</Text>
+        <Text>MAP!</Text>
       </View>
     )
   }
@@ -17,7 +17,7 @@ export default class MapScene extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'red',
     alignItems: 'center',
     justifyContent: 'center',
   },
