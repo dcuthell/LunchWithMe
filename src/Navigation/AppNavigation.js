@@ -35,7 +35,10 @@ const DrawerNavigation = StackNavigator ({
   headerMode: 'float',
   navigationOptions: ({navigation}) => ({
     headerStyle: {backgroundColor: '#42b3f4'},
-    title: 'Welcome!',
+    headerTitleStyle: {
+      color: 'white'
+    },
+    title: 'LUNCHWITH',
     gesturesEnabled: false,
     headerLeft: (
       <TouchableOpacity
