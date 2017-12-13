@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import PropTypes from 'prop-types';
 
 class Login extends React.Component {
@@ -27,19 +27,19 @@ class Login extends React.Component {
   render() {
     return(
       <View style={styles.container}>
-        <Text style={styles.header}>
-          Please Login or Create an Account
-        </Text>
+
+        <Image style={styles.logo} source={require('../images/lunchwithlogo_small.png')} />
+
         <View style={styles.accountInput}>
-          <Text style={styles.inputDesc}>User</Text>
           <TextInput
             style={styles.input}
+            placeholderTextColor='white'
             placeholder="UserName"
             onChangeText={(text) => {this.user.name = text;}}
           />
-          <Text style={styles.inputDesc}>Password</Text>
           <TextInput
             style={styles.input}
+            placeholderTextColor='white'
             placeholder="Password"
             onChangeText={(text) => {this.user.password = text;}}
           />
@@ -47,9 +47,6 @@ class Login extends React.Component {
         <View style={styles.footer}>
           <TouchableOpacity onPress={this.logIn}>
           </TouchableOpacity>
-          <Text>
-            Create A New Account
-          </Text>
         </View>
       </View>
     );
@@ -61,22 +58,32 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: '#42b3f4'
   },
   header: {
     fontSize: 30,
   },
   accountInput: {
-    backgroundColor: 'blue',
-  },
-  inputDesc: {
-    fontSize: 16,
-  },
+    },
   input: {
-    backgroundColor: 'green',
-  },
+    width: 300,
+    fontSize: 18,
+    fontFamily: 'Avenir',
+    color: 'white',
+    padding: 10,
+    margin: 5,
+    borderRadius: 2,
+    borderColor: 'white',
+    borderWidth: .3,
+    textAlign: 'center'  },
   footer: {
     fontSize: 30,
   },
+  title: {
+    fontSize: 16,
+    color: 'white',
+    fontFamily: 'Avenir',
+  }
 
 });
 
