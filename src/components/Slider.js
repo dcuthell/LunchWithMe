@@ -11,10 +11,11 @@ export default class SliderOne extends React.Component {
     return (
       <View style={styles.container}>
         <Slider
+          step= { 1 }
           value={this.state.value}
           onValueChange={value => this.setState({ value })}
           minimumTrackTintColor = 'gray'
-          minimumValue = { .5 }
+          minimumValue = { 0 }
           maximumValue = { 30 }
         />
       <Text style={styles.text}>
@@ -36,5 +37,10 @@ const styles = StyleSheet.create({
   },
   text: {
     paddingBottom: 8,
+    fontSize: 15,
+    fontFamily: 'Avenir',
+    color: '#42b3f4',
+    textAlign: 'left',
+    paddingLeft: 8,
   }
 });
