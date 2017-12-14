@@ -1,15 +1,19 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TextInput, Switch} from 'react-native'
 import { FormLabel, FormInput, Button } from 'react-native-elements'
-
+import SliderOne from './Slider'
+import Slider from "react-native-slider";
 
 export default class Profile extends React.Component {
 
   render() {
     return (
       <View style={styles.container}>
-          <FormLabel labelStyle={styles.formLabel}>A bit about me</FormLabel>
+        <Text style={styles.text}>A bit about me ... </Text>
         <FormInput inputStyle={styles.formInput}/>
+
+      <SliderOne />
+
         <Text style={styles.text}>My Skills</Text>
         <View style={styles.row}>
           <FormLabel labelStyle={styles.formLabel}>React-Native</FormLabel>
@@ -102,7 +106,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end'
   },
   text: {
-    // paddingTop: 15,
+    paddingTop: 15,
     fontSize: 15,
     fontFamily: 'Avenir',
     color: 'gray',
