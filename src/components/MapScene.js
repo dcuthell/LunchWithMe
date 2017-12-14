@@ -1,23 +1,31 @@
 
-import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import React from 'react';
+import { StyleSheet, View } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 
 
 export default class MapScene extends React.Component {
 
+  state = {
+    region: {
+      latitude: 45.5231,
+      longitude: -122.6708,
+      latitudeDelta: .05,
+      longitudeDelta: .05,
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          style={{
-                    backgroundColor: '#ccc',
-                    flex: 1,
-                    width: '100%',
-                    justifyContent: 'center',
-                  }}
-          source={require('../images/map_dummy.png')} />
+        <MapView
+          provider={ PROVIDER_GOOGLE }
+          style={{ flex: 1, height: '100%', width: '100%' }}
+          showsUserLocation={ true }
+          region={ this.state.region }>
+        </MapView>
       </View>
-    )
+    );
   }
 }
 
@@ -28,4 +36,4 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-})
+});
