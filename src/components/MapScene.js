@@ -25,35 +25,38 @@ export default class MapScene extends React.Component {
           showsUserLocation={ true }
           region={ this.state.region }>
 
-          <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
+          <View>
             <TouchableOpacity onPress={() => this.setState({open: true})}>
-              <Text style={styles.text}>This is text</Text>
+              <View style={styles.filterView}>
+                <Text style={styles.filterText}>FILTERS</Text>
+              </View>
             </TouchableOpacity>
-            <Modal
-               offset={this.state.offset}
-               open={this.state.open}
-               modalDidOpen={() => console.log('modal did open')}
-               modalDidClose={() => this.setState({open: false})}
-               style={{alignItems: 'center'}}>
-               <View>
-                 <Text style={{fontSize: 20, marginBottom: 10}}>Hello world!</Text>
-                 <TouchableOpacity
-                 style={{margin: 5}}
-                 onPress={() => this.setState({offset: -100})}>
-                   <Text>Move modal up</Text>
-                 </TouchableOpacity>
-                 <TouchableOpacity
+            <View style={styles.modalWrap}>
+              <Modal
+                 offset={this.state.offset}
+                 open={this.state.open}
+                 modalDidOpen={() => console.log('modal did open')}
+                 modalDidClose={() => this.setState({open: false})}
+                 style={styles.modal}>
+                 <View style={styles.whiteBox}>
+                   <TouchableOpacity
                    style={{margin: 5}}
-                   onPress={() => this.setState({offset: 0})}>
-                   <Text>Reset modal position</Text>
-                 </TouchableOpacity>
-                 <TouchableOpacity
-                   style={{margin: 5}}
-                   onPress={() => this.setState({open: false})}>
-                   <Text>Close modal</Text>
-                 </TouchableOpacity>
-               </View>
-            </Modal>
+                   onPress={() => this.setState({offset: -100})}>
+                     <Text>Move modal up</Text>
+                   </TouchableOpacity>
+                   <TouchableOpacity
+                     style={{margin: 5}}
+                     onPress={() => this.setState({offset: 0})}>
+                     <Text>Reset modal position</Text>
+                   </TouchableOpacity>
+                   <TouchableOpacity
+                     style={{margin: 5}}
+                     onPress={() => this.setState({open: false})}>
+                     <Text>Close modal</Text>
+                   </TouchableOpacity>
+                 </View>
+              </Modal>
+            </View>
           </View>
         </MapView>
       </View>
@@ -64,14 +67,36 @@ export default class MapScene extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
   },
   modal: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'flex-end',
+    height: '100%',
+    width: '100%',
   },
-  text: {
+  modalWrap: {
+    height: '100%',
+    width: '100%',
+  },
+  filterView: {
+    marginTop: 10,
+    backgroundColor: 'white',
+    width: 70,
+    height: 20,
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignSelf: 'center',
+  },
+  filterText: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    fontSize: 12,
+    fontFamily: 'Avenir',
+    alignSelf: 'center',
+  },
+  whiteBox: {
+    height: '100%',
+    width: '100%',
   }
 });
