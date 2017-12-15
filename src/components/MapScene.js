@@ -49,11 +49,13 @@ export default class MapScene extends React.Component {
                      onPress={() => this.setState({offset: 0})}>
                      <Text>Reset modal position</Text>
                    </TouchableOpacity>
-                   <TouchableOpacity
-                     style={{margin: 5}}
-                     onPress={() => this.setState({open: false})}>
-                     <Text>Close modal</Text>
-                   </TouchableOpacity>
+                   <View style={styles.footer}>
+                     <TouchableOpacity
+                       style={{margin: 5}}
+                       onPress={() => this.setState({open: false})}>
+                       <Text style={styles.footerText}>SEE MENTORS</Text>
+                     </TouchableOpacity>
+                   </View>
                  </View>
               </Modal>
             </View>
@@ -76,7 +78,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   modalWrap: {
-    height: '100%',
+    height: '90%',
     width: '100%',
   },
   filterView: {
@@ -98,5 +100,20 @@ const styles = StyleSheet.create({
   whiteBox: {
     height: '100%',
     width: '100%',
+  },
+  footer: {
+    flex: 1,
+    height: 10,
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    bottom: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  footerText: {
+    fontSize: 12,
+    fontFamily: 'Avenir',
+    color: 'black',
   }
 });
