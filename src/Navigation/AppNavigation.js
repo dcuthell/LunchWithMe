@@ -56,7 +56,8 @@ const DrawerNavigation = StackNavigator ({
           source={require('../images/hamburger_menu_small.png')}>
         </Image>
       </TouchableOpacity>
-    )
+    ),
+
   })
 })
 
