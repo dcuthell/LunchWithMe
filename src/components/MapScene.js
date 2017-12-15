@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import Modal from 'react-native-simple-modal';
+import SliderOne from './Slider'
 
 export default class MapScene extends React.Component {
 
@@ -39,6 +40,7 @@ export default class MapScene extends React.Component {
                  modalDidClose={() => this.setState({open: false})}
                  style={styles.modal}>
                  <View style={styles.whiteBox}>
+                   <SliderOne />
                    <TouchableOpacity
                    style={{margin: 5}}
                    onPress={() => this.setState({offset: -100})}>
