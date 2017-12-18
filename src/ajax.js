@@ -1,6 +1,6 @@
 const apiHost = 'http://lunchwith-api.eyecue.io';
 
-export default async function getLoginResponse() {
+export default async function getLoginResponse(email, password) {
   console.log(apiHost+ '/login');
 
 
@@ -14,8 +14,8 @@ export default async function getLoginResponse() {
     body: JSON.stringify({
       "data": {
         "attributes": {
-          "email": "bob@jones.com",
-          "password": "bobjones"
+          "email": `${email}`,
+          "password": `${password}`
         }
       }
     })
@@ -24,7 +24,7 @@ export default async function getLoginResponse() {
     console.log(request);
     const response = await fetch(request);
     const responseJson = await response.json();
-    const greeting = responseJson.included[0].id;
+    const greeting = 'Hello there, ' + responseJson.included[0].attributes.first_name + ' ' + responseJson.included[0].attributes.last_name + ' !';
     console.log(greeting);
   } catch (error) {
     console.log(error);
