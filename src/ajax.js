@@ -1,21 +1,17 @@
 const apiHost = 'http://lunchwith-api.eyecue.io';
 
 export default async function getLoginResponse(email, password) {
-  console.log(apiHost+ '/login');
-
-
-
   const request = new Request(apiHost+ '/login', {
     method: 'POST',
     headers: {
-      "Accept": "application/json",
-      "Content-Type": "application/vnd.api+json",
+      'Accept': 'application/json',
+      'Content-Type': 'application/vnd.api+json',
     },
     body: JSON.stringify({
-      "data": {
-        "attributes": {
-          "email": `${email}`,
-          "password": `${password}`
+      'data': {
+        'attributes': {
+          'email': `${email}`,
+          'password': `${password}`
         }
       }
     })
