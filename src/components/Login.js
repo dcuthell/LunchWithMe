@@ -5,13 +5,16 @@ import PropTypes from 'prop-types';
 class Login extends React.Component {
 
   user = {
-    name: '',
+    email: '',
     password: '',
   }
 
-  static propTypes = {
-    setUserState: PropTypes.func.isRequired,
-  }
+
+
+
+  // static propTypes = {
+  //   setUserState: PropTypes.func.isRequired,
+  // }
 
   logIn = () => {
     //This should send collected user info to server to validate, get back full user item to pass back to the App component
@@ -21,7 +24,9 @@ class Login extends React.Component {
       id: 42,
     };
 
-    this.props.setUserState(this.user);
+    console.log("Hello" + this.user.email + " " + this.user.password);
+
+    // this.props.setUserState(this.user);
   }
 
   render() {
@@ -34,18 +39,21 @@ class Login extends React.Component {
           <TextInput
             style={styles.input}
             placeholderTextColor='white'
-            placeholder="UserName"
-            onChangeText={(text) => {this.user.name = text;}}
+            placeholder="User Email"
+            onChangeText={(text) => {this.user.email = text.toLowerCase();}}
           />
           <TextInput
             style={styles.input}
             placeholderTextColor='white'
             placeholder="Password"
-            onChangeText={(text) => {this.user.password = text;}}
+            onChangeText={(text) => {this.user.password = text.toLowerCase();}}
+            secureTextEntry={true}
+            autoCorrect={false}
           />
         </View>
         <View style={styles.footer}>
           <TouchableOpacity onPress={this.logIn}>
+            <Text style={styles.input}>Log Me In!</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -77,7 +85,7 @@ const styles = StyleSheet.create({
     borderWidth: .3,
     textAlign: 'center'  },
   footer: {
-    
+
   },
   title: {
     fontSize: 16,
