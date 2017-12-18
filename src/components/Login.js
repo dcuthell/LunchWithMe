@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import PropTypes from 'prop-types';
+import ajax from '../ajax.js';
 
 class Login extends React.Component {
 
@@ -16,7 +17,7 @@ class Login extends React.Component {
   //   setUserState: PropTypes.func.isRequired,
   // }
 
-  logIn = () => {
+  logIn = async () => {
     //This should send collected user info to server to validate, get back full user item to pass back to the App component
 
     this.user = {
@@ -25,6 +26,8 @@ class Login extends React.Component {
     };
 
     console.log("Hello" + this.user.email + " " + this.user.password);
+
+    ajax();
 
     // this.props.setUserState(this.user);
   }
