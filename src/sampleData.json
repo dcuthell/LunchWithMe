@@ -1,0 +1,182 @@
+"data": {
+  "profiles": [
+    {
+      "profileId": 0,
+      "firstName": "Mike",
+      "lastName": "Jones",
+      "location": {
+        "lat": 45.5171,
+        "lon": -122.6791
+      },
+	    "availability": {
+		    "monday": [
+          {
+            "start" : 11,
+    			  "stop" : 1
+          }
+        ],
+        "tuesday": [
+          {
+            "start" : 11,
+    			  "stop" : 1
+          }
+        ],
+        "wednesday": [
+          {
+            "start" : 13,
+    			  "stop" : 17
+          }
+        ],
+        "thursday": [
+          {
+            "start" : 11,
+    			  "stop" : 1
+          }
+        ],
+        "friday": []
+      },
+      "experienceLevel": 1,
+      "pictureLink": "http://www.somephoto.com/profile1.jpg",
+      "description": "I was a rapper and now I do dev work",
+      "companyName": "Not Google",
+      "companyTitle": "Senior VP",
+      "companyDescription": "It's not Google",
+      "skills": [
+        "React",
+        "Java",
+        "C#"
+      ],
+      "isMentor": true,
+      "dateIds": [
+        0,
+        2
+      ],
+      "dateCreated": "2017-08-01 00:00:00"
+    },
+    {
+      "profileId": 1,
+      "firstName": "Bobby",
+      "lastName": "Boucher",
+      "location": {
+        "lat": 45.5181,
+        "lon": -122.6791
+      },
+	    "availability": {
+		    "monday": [],
+        "tuesday": [],
+        "wednesday": [],
+        "thursday": [],
+        "friday": []
+      },
+      "experienceLevel": 0,
+      "pictureLink": "http://www.somephoto.com/profile2.jpg",
+      "description": "I played football, now I'd like to learn React",
+      "companyName": "",
+      "companyTitle": "",
+      "companyDescription": "",
+      "skills": [],
+      "isMentor": false,
+      "dateIds": [
+        0,
+        1,
+        2
+      ],
+      "dateCreated": "2017-07-01 00:00:00"
+    },
+    {
+      "profileId": 2,
+      "firstName": "Bill",
+      "lastName": "Gates",
+      "location": {
+        "lat": 45.5161,
+        "lon": -122.6791
+      },
+	    "availability": {
+		    "monday": [
+        ],
+        "tuesday": [
+          {
+            "start" : 8,
+    			  "stop" : 10
+          },
+          {
+            "start" : 12,
+    			  "stop" : 14
+          },
+          {
+            "start" : 16,
+    			  "stop" : 18
+          }
+        ],
+        "wednesday": [
+        ],
+        "thursday": [
+          {
+            "start" : 8,
+    			  "stop" : 20
+          }
+        ],
+        "friday": []
+      },
+      "experienceLevel": 5,
+      "pictureLink": "http://www.somephoto/profile1.jpg",
+      "description": "I am computers",
+      "companyName": "B&M G Foundation",
+      "companyTitle": "Boss",
+      "companyDescription": "We give our kids' inheritance away",
+      "skills": [
+        "C#"
+      ],
+      "isMentor": true,
+      "dateIds": [
+        1
+      ],
+      "dateCreated": "2017-09-01 00:00:00"
+    }
+  ],
+  "dates": [
+    {
+      "dateId": 0,
+      "locationName": "Momo's",
+	    "locationAddress": "725 SW 10th",
+      "yelpId": 12345,
+	    "mentorId": 0,
+	    "menteeId": 1,
+      "day": "2018-01-02",
+      "time": 13,
+      "duration": 1,
+      "isConfirmed": true,
+      "isCancelled": false,
+      "isComplete": false
+    }
+    {
+      "dateId": 1,
+      "locationName": "Bill's Secret Spot",
+	    "locationAddress": "027 SW Arthur",
+      "yelpId": null,
+	    "mentorId": 2,
+	    "menteeId": 1,
+      "day": "2017-10-02",
+      "time": 13,
+      "duration": 1,
+      "isConfirmed": true,
+      "isCancelled": false,
+      "isComplete": true
+    }
+    {
+      "dateId": 2,
+      "locationName": "Momo's",
+	    "locationAddress": "725 SW 10th",
+      "yelpId": 12345,
+	    "mentorId": 0,
+	    "menteeId": 1,
+      "day": "2018-01-01",
+      "time": 15,
+      "duration": 1,
+      "isConfirmed": true,
+      "isCancelled": true,
+      "isComplete": false
+    }
+	]
+}
+	

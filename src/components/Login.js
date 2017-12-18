@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#42b3f4'
   },
   header: {
-    fontSize: 30,
+
   },
   accountInput: {
     },
@@ -77,7 +77,7 @@ const styles = StyleSheet.create({
     borderWidth: .3,
     textAlign: 'center'  },
   footer: {
-    fontSize: 30,
+    
   },
   title: {
     fontSize: 16,
