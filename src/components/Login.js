@@ -27,7 +27,7 @@ class Login extends React.Component {
 
     console.log("Hello" + this.user.email + " " + this.user.password);
 
-    ajax(this.user.email, this.user.password);
+    ajax.getLoginResponse(this.user.email, this.user.password);
 
     // this.props.setUserState(this.user);
   }

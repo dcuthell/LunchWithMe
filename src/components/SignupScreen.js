@@ -1,8 +1,24 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from 'react-native'
 import CheckBox from 'react-native-checkbox'
+import ajax from '../ajax';
 
 export default class SignupScreen extends React.Component {
+  user = {
+    email: '',
+    password: '',
+    first_name: '',
+    last_name: ''
+  }
+
+  logIn = async () => {
+    //This should send collected user info to server to validate, get back full user item to pass back to the App component
+
+    ajax.getRegisterResponse(this.user.first_name, this.user.last_name, this.user.email, this.user.password);
+
+    // this.props.setUserState(this.user);
+  }
+
   render() {
     return(
       <View style={styles.container}>
@@ -14,18 +30,26 @@ export default class SignupScreen extends React.Component {
             style={styles.input}
             placeholderTextColor='white'
             placeholder="First Name"
-            onChangeText={(text) => {this.user.name = text;}}
+            onChangeText={(text) => {this.user.first_name = text;}}
           />
           <TextInput
             style={styles.input}
             placeholderTextColor='white'
             placeholder="Last Name"
-            onChangeText={(text) => {this.user.password = text;}}
+            onChangeText={(text) => {this.user.last_name = text;}}
           />
           <TextInput
             style={styles.input}
             placeholderTextColor='white'
             placeholder="Email Address"
+            onChangeText={(text) => {this.user.email = text;}}
+          />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="Password"
+            secureTextEntry={true}
+            autoCorrect={false}
             onChangeText={(text) => {this.user.password = text;}}
           />
           <CheckBox
