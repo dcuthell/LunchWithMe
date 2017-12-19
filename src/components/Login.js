@@ -25,9 +25,31 @@ class Login extends React.Component {
       id: 42,
     };
 
-    console.log("Hello" + this.user.email + " " + this.user.password);
+    const options ={
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    const success = (pos) => {
+      const crd = pos.coords;
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+    };
+
+    const error = (err) => {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    };
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+
+    console.log('Hello' + this.user.email + '' + this.user.password);
 
     ajax.getLoginResponse(this.user.email, this.user.password);
+
+
 
     // this.props.setUserState(this.user);
   }
