@@ -4,9 +4,6 @@
 
 #### By _**David Cuthell + Kate Byars**_
 
-## Description
-### Created during my tenure at Epicodus, Portland in the _**Android Track**_
-
 ## To View This Project
 
 | You should: |
