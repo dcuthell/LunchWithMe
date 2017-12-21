@@ -22,11 +22,11 @@ module.exports = {
   rules: {
     'react/prop-types': ['off'],
     indent: ['error', 2, { SwitchCase: 1 }],
-    'linebreak-style': ['error', 'unix'],
+    'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
     'no-console': ['warn', { allow: ['info', 'error'] }],
-    'arrow-parens': ['error', 'always'],
+    'arrow-parens': ['error', 'as-needed'],
     'prefer-const': 'error',
   },
 };
