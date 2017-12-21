@@ -1,17 +1,5 @@
 #LUNCHWith
 
-#### The app that lets you find software development mentors in your area. Have Lunch With your favorite mentor!.
-
-#### By _**David Cuthell + Kate Byars**_
-
-## To View This Project
-
-| You should: |
-| ----------|
-| Clone the git repo to your computer. |
-| Open in atom and npm install. |
-| run react-native run-ios in the terminal.|
-
 _This project is currently in the works. We will update this page as it progresses._
 ![LunchWithMarketingPiece](https://github.com/dcuthell/LunchWithMe/blob/master/src/images/lunchwithPDF.jpg)
 
@@ -26,6 +14,19 @@ _Please let the author know if you have questions. Kate Byars katebyars5@gmail.c
 ## Technologies Used
 
 _React-Native._
+
+
+#### The app that lets you find software development mentors in your area. Have Lunch With your favorite mentor!.
+
+#### By _**David Cuthell + Kate Byars**_
+
+## To View This Project
+
+| You should: |
+| ----------|
+| Clone the git repo to your computer. |
+| Open in atom and npm install. |
+| run react-native run-ios in the terminal.|
 
 ## Dependencies needed
 _Dependencies can be installed via npm install._
