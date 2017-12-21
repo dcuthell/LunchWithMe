@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 
 const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
 
@@ -26,13 +25,13 @@ const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
           style={styles.input}
           placeholderTextColor='white'
           placeholder="User Email"
-          onChangeText={(text) => {email = text.toLowerCase();}}
+          onChangeText={text => {email = text.toLowerCase();}}
         />
         <TextInput
           style={styles.input}
           placeholderTextColor='white'
           placeholder="Password"
-          onChangeText={(text) => {password = text.toLowerCase();}}
+          onChangeText={text => {password = text.toLowerCase();}}
           secureTextEntry={true}
           autoCorrect={false}
         />
@@ -76,4 +75,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect()
+export default LoginScreen;
