@@ -16,7 +16,7 @@
 | run react-native run-ios in the terminal.|
 
 _This project is currently in the works. We will update this page as it progresses._
-![Description](https://github.com/katebyars/RealHouse/blob/master/app/src/main/res/drawable/BuyerPersonas.JPG)
+![LunchWithMarketingPiece](https://github.com/dcuthell/LunchWithMe/blob/master/src/images/lunchwithPDF.jpg)
 
 ## Known Bugs
 
