@@ -8,7 +8,7 @@ import DrawerContainer from '../components/DrawerContainer'
 import LoginScreen from '../components/LoginScreen'
 import SignupScreen from '../components/SignupScreen'
 import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
-import Login from '../components/Login'
+import Login from '../components/containers/LoginScreen'
 import Profile from '../components/Profile'
 
 import ReduxNavigation from '../Navigation/ReduxNavigation'
