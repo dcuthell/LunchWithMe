@@ -8,6 +8,7 @@
     "react-devtools": "react-devtools"
   },
   "dependencies": {
+    "babel-plugin-module-resolver": "^3.0.0",
     "native-base": "^2.3.5",
     "react": "16.0.0",
     "react-native": "0.51.0",

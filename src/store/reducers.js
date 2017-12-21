@@ -1,4 +1,4 @@
-import C from '../constants';
+import C from 'constants';
 import { combineReducers } from 'redux';
 
 export const loginRequested = (state=false, action) => {

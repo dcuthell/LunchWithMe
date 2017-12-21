@@ -1,4 +1,4 @@
-// title
+// users
 export const ADD_PROFILE = 'ADD_PROFILE';
 export const ADD_PROFILE_TO_DATE = 'ADD_PROFILE_TO_DATE';
 export const ADD_DATE_TO_PROFILE = 'ADD_DATE_TO_PROFILE';

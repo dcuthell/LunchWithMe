@@ -25,7 +25,7 @@ module.exports = {
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'no-console': ['warn', { allow: ['info', 'error'] }],
+    'no-console': ['error', { allow: ['info', 'error'] }],
     'arrow-parens': ['error', 'as-needed'],
     'prefer-const': 'error',
   },
