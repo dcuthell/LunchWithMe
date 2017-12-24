@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import PropTypes from 'prop-types';
 
-const LoginScreen = ({ userData=null, loginUser=(f)=>f}) => {
+const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
 
   let email, password;
   (userData) ? email=userData.email : email=null;

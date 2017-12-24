@@ -9,7 +9,7 @@ const mapStatetoProps = state => ({
 const mapDispatchToProps = dispatch => ({
   loginUser({email, password}) {
     dispatch(
-      loginRequest(email, password)
+      loginUser(email, password) //changed but didnt fix
     );
   }
 });

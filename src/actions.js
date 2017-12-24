@@ -3,7 +3,7 @@ import C from './constants';
 const apiHost = 'http://lunchwith-api.eyecue.io';
 
 export async function loginRequest(email, password){
-  
+
   dispatch({
     type: C.SENDING_LOGIN_REQUEST
   }); //set some bool to signal user is not logged in. Needed?

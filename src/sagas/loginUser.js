@@ -1,8 +1,9 @@
-import { put, takeLatest } from 'redux-saga/effects';
+import { takeLatest } from 'redux-saga/effects';
+import { LOGIN_USER } from '../lib/constants/actions';
 
 const apiHost = 'http://lunchwith-api.eyecue.io';
 
-
+//Changed name but didnt fix
 export function* loginUser(userData) {
 
   const request = new Request(apiHost+ '/login', {
@@ -23,20 +24,20 @@ export function* loginUser(userData) {
 
   try {
     const response = yield fetch(request);
-    const responseJson = yield response.json();
+    const responseJson = response.json();
 
     const greeting = 'Hello there, ' + responseJson.included[0].attributes.first_name + ' ' + responseJson.included[0].attributes.last_name + ' !';
     console.log(greeting);
 
-    const userDataToSave = responseJson.included[0].attributes;
-    yield put({type: 'C.LOGIN_REQUEST_SUCCESS', payload: userDataToSave});
+    // const userDataToSave = responseJson.included[0].attributes;
+    // yield put([LOGIN_REQUEST_SUCCESS], payload: userDataToSave});
 
   } catch (error) {
-    yield put({type: 'C.LOGIN_REQUEST_FAILUE'});
+    // yield put([LOGIN_REQUEST_FAILUE]);
     console.log(error);
   }
 }
 
 export function* watchLoginUser(){
-  yield takeLatest('C.SENDING_LOGIN_REQUEST', loginUser);
+  yield takeLatest([LOGIN_USER], loginUser);
 }

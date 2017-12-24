@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 
-import Login from 'components/containers/LoginScreen';
-import routesNames from 'lib/constants/routes';
+import Login from './components/containers/LoginScreen';
+import routesNames from './lib/constants/routes';
 
 //TODO: Import and fix routes
 const routes = {
