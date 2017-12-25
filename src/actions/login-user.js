@@ -1,5 +1,6 @@
-import { LOGIN_USER } from 'lib/constants/actions';
+import { LOGIN_USER } from '../lib/constants/actions';
 
-export default () => ({
+export default payload => ({
   type: LOGIN_USER,
+  payload
 });

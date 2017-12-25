@@ -1,6 +1,6 @@
 import LoginScreen from '../ui/LoginScreen';
 import { connect } from 'react-redux';
-import { loginRequest } from '../../actions';
+import { loginRequest } from '../../actions/index';
 
 const mapStatetoProps = state => ({
   userData: state.storedUserData
@@ -8,8 +8,9 @@ const mapStatetoProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   loginUser({email, password}) {
+    console.log(email, password);
     dispatch(
-      loginUser(email, password) //changed but didnt fix
+      loginRequest(email, password)
     );
   }
 });

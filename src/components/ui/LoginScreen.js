@@ -9,7 +9,8 @@ const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
   (userData) ? password=userData.password : password=null;
 
   const logIn = async () => {
-    loginUser({
+    console.log('Hey bud');
+    await loginUser({
       email: email,
       password: password
     });

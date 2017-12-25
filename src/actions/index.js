@@ -1,7 +1,7 @@
-import loginUser from './login-user';
+import loginRequest from './login-user';
 
 const ActionCreators = {
-  loginUser,
+  loginRequest,
 };
 
 export default ActionCreators;

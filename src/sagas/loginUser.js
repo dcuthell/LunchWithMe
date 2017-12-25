@@ -4,8 +4,9 @@ import { LOGIN_USER } from '../lib/constants/actions';
 const apiHost = 'http://lunchwith-api.eyecue.io';
 
 //Changed name but didnt fix
-export function* loginUser(userData) {
+export function* loginUser(action) {
 
+  console.log('email: ' + action.payload.email + ' password: ' + action.payload.password);
   const request = new Request(apiHost+ '/login', {
     method: 'POST',
     headers: {
@@ -15,8 +16,8 @@ export function* loginUser(userData) {
     body: JSON.stringify({
       'data': {
         'attributes': {
-          'email': `${userData.email}`,
-          'password': `${userData.password}`
+          'email': `${action.payload.email}`,
+          'password': `${action.payload.password}`
         }
       }
     })
@@ -39,5 +40,6 @@ export function* loginUser(userData) {
 }
 
 export function* watchLoginUser(){
+  console.log('watch saw');
   yield takeLatest([LOGIN_USER], loginUser);
 }
