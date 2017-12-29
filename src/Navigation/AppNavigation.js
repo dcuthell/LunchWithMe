@@ -3,6 +3,7 @@ import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Text, Animated, Easing, Button, View, TouchableHighlight, TouchableOpacity, Image } from 'react-native'
 import SplashScene from '../components/SplashScene'
 import MapScene from '../components/MapScene'
+import MapPage from '../components/MapPage'
 import Appointment from '../components/Appointment'
 import DrawerContainer from '../components/DrawerContainer'
 import LoginScreen from '../components/LoginScreen'
@@ -22,8 +23,7 @@ const noTransitionConfig = () => ({
 })
 
 const DrawerStack = DrawerNavigator({
-  splashScene: { screen: SplashScene },
-  mapScene: { screen: MapScene },
+  MapPage: { screen: MapPage },
   appointment: { screen: Appointment },
   profile: { screen: Profile }
 }, {
@@ -64,7 +64,7 @@ const DrawerNavigation = StackNavigator ({
 const LoginStack = StackNavigator({
   loginScreen: { screen: LoginScreen },
   signupScreen: { screen: SignupScreen },
-  splashScene: { screen: SplashScene },
+  mapScene: { screen: MapScene },
   login: { screen: Login },
   forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
@@ -84,7 +84,7 @@ const PrimaryNav = StackNavigator({
 }, {
   headerMode: 'none',
   title: 'Main',
-  initialRouteName: 'loginStack',
+  initialRouteName: 'drawerStack',
   transitionConfig: noTransitionConfig
 })
 
