@@ -6,7 +6,8 @@ const apiHost = 'http://lunchwith-api.eyecue.io';
 //Changed name but didnt fix
 export function* loginUser(action) {
 
-  console.log('email: ' + action.payload.email + ' password: ' + action.payload.password);
+  console.log('youre in luck');
+  // console.log('email: ' + action.payload.email + ' password: ' + action.payload.password);
   const request = new Request(apiHost+ '/login', {
     method: 'POST',
     headers: {
@@ -23,9 +24,11 @@ export function* loginUser(action) {
     })
   });
 
+  console.log('Hi again');
+
   try {
     const response = yield fetch(request);
-    const responseJson = response.json();
+    const responseJson = yield response.json();
 
     const greeting = 'Hello there, ' + responseJson.included[0].attributes.first_name + ' ' + responseJson.included[0].attributes.last_name + ' !';
     console.log(greeting);
@@ -34,6 +37,8 @@ export function* loginUser(action) {
     // yield put([LOGIN_REQUEST_SUCCESS], payload: userDataToSave});
 
   } catch (error) {
+
+    console.log('sup biiiiitch');
     // yield put([LOGIN_REQUEST_FAILUE]);
     console.log(error);
   }

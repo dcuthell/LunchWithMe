@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
-import PropTypes from 'prop-types';
+import  PropTypes  from 'prop-types';
 
 const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
 
@@ -8,8 +8,10 @@ const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
   (userData) ? email=userData.email : email=null;
   (userData) ? password=userData.password : password=null;
 
+  const printout = this.navigation;
+
   const logIn = async () => {
-    console.log('Hey bud');
+    console.log(printout);
     await loginUser({
       email: email,
       password: password
