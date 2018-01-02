@@ -23,7 +23,7 @@ const noTransitionConfig = () => ({
 });
 
 const DrawerStack = DrawerNavigator({
-  MapPage: { screen: MapPage },
+  mapScene: { screen: MapScene },
   appointment: { screen: Appointment },
   profile: { screen: Profile }
 }, {
