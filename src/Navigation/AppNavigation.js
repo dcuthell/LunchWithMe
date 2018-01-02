@@ -1,17 +1,17 @@
-import React from 'react'
-import { StackNavigator, DrawerNavigator } from 'react-navigation'
-import { Text, Animated, Easing, Button, View, TouchableHighlight, TouchableOpacity, Image } from 'react-native'
-import SplashScene from '../components/SplashScene'
-import MapScene from '../components/MapScene'
-import Appointment from '../components/Appointment'
-import DrawerContainer from '../components/DrawerContainer'
-import LoginScreen from '../components/LoginScreen'
-import SignupScreen from '../components/SignupScreen'
-import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
-import Login from '../components/containers/LoginScreen'
-import Profile from '../components/Profile'
+import React from 'react';
+import { StackNavigator, DrawerNavigator } from 'react-navigation';
+import { Text, Animated, Easing, Button, View, TouchableHighlight, TouchableOpacity, Image } from 'react-native';
+import SplashScene from '../components/SplashScene';
+import MapScene from '../components/MapScene';
+import Appointment from '../components/Appointment';
+import DrawerContainer from '../components/DrawerContainer';
+import LoginScreen from '../components/LoginScreen';
+import SignupScreen from '../components/SignupScreen';
+import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen';
+import Login from '../components/containers/LoginScreen';
+import Profile from '../components/Profile';
 
-import ReduxNavigation from '../Navigation/ReduxNavigation'
+import ReduxNavigation from '../Navigation/ReduxNavigation';
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -19,7 +19,7 @@ const noTransitionConfig = () => ({
     timing: Animated.timing,
     easing: Easing.step0
   }
-})
+});
 
 const DrawerStack = DrawerNavigator({
   splashScene: { screen: SplashScene },
@@ -28,7 +28,7 @@ const DrawerStack = DrawerNavigator({
   profile: { screen: Profile }
 }, {
   gesturesEnabled: false,
-  contentComponent: (props) => <DrawerContainer {...props} />
+  contentComponent: props => <DrawerContainer {...props} />
 })
 
 const DrawerNavigation = StackNavigator ({

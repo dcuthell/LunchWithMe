@@ -11,7 +11,6 @@ const mapStatetoProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   loginUser({email, password}) {
-    console.log('about to dispatch with' + email + ', and ' + password);
     const payload = {email, password};
     dispatch(
       loginRequest(payload)

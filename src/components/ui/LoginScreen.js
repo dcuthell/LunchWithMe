@@ -8,10 +8,7 @@ const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
   (userData) ? email=userData.email : email=null;
   (userData) ? password=userData.password : password=null;
 
-  const printout = this.navigation;
-
   const logIn = async () => {
-    console.log(printout);
     await loginUser({
       email: email,
       password: password
