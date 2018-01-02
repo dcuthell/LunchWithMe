@@ -4,6 +4,7 @@ import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import Modal from 'react-native-simple-modal';
 import SliderOne from './Slider'
+import mapStyle from '../theme/mapStyle'
 
 export default class MapScene extends React.Component {
 
@@ -18,6 +19,8 @@ export default class MapScene extends React.Component {
   }
 
   render() {
+    console.log(JSON.stringify(mapStyle))
+
     return (
       <View style={styles.container}>
         <View>
@@ -56,7 +59,8 @@ export default class MapScene extends React.Component {
         </Modal>
         <MapView
           provider={ PROVIDER_GOOGLE }
-          style={styles.map}
+          style={ styles.map }
+          customMapStyle={ mapStyle }
           showsUserLocation={ true }
           region={ this.state.region }>
         </MapView>
