@@ -3,6 +3,7 @@ import { StackNavigator, DrawerNavigator } from 'react-navigation'
 import { Text, Animated, Easing, Button, View, TouchableHighlight, TouchableOpacity, Image } from 'react-native'
 import SplashScene from '../components/SplashScene'
 import MapScene from '../components/MapScene'
+import MapPage from '../components/MapPage'
 import Appointment from '../components/Appointment'
 import DrawerContainer from '../components/DrawerContainer'
 import LoginScreen from '../components/LoginScreen'
@@ -11,7 +12,7 @@ import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
 import Login from '../components/Login'
 import Profile from '../components/Profile'
 
-import ReduxNavigation from '../Navigation/ReduxNavigation'
+import ReduxNavigation from '../Navigation/ReduxNavigation';
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -19,7 +20,7 @@ const noTransitionConfig = () => ({
     timing: Animated.timing,
     easing: Easing.step0
   }
-})
+});
 
 const DrawerStack = DrawerNavigator({
   mapScene: { screen: MapScene },
@@ -27,7 +28,7 @@ const DrawerStack = DrawerNavigator({
   profile: { screen: Profile }
 }, {
   gesturesEnabled: false,
-  contentComponent: (props) => <DrawerContainer {...props} />
+  contentComponent: props => <DrawerContainer {...props} />
 })
 
 const DrawerNavigation = StackNavigator ({
@@ -63,7 +64,7 @@ const DrawerNavigation = StackNavigator ({
 const LoginStack = StackNavigator({
   loginScreen: { screen: LoginScreen },
   signupScreen: { screen: SignupScreen },
-  splashScene: { screen: SplashScene },
+  mapScene: { screen: MapScene },
   login: { screen: Login },
   forgottenPasswordScreen: { screen: ForgottenPasswordScreen, navigationOptions: { title: 'Forgot Password' } }
 }, {
