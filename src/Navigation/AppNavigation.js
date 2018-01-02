@@ -12,7 +12,7 @@ import ForgottenPasswordScreen from '../components/ForgottenPasswordScreen'
 import Login from '../components/Login'
 import Profile from '../components/Profile'
 
-import ReduxNavigation from '../Navigation/ReduxNavigation'
+import ReduxNavigation from '../Navigation/ReduxNavigation';
 
 const noTransitionConfig = () => ({
   transitionSpec: {
@@ -20,7 +20,7 @@ const noTransitionConfig = () => ({
     timing: Animated.timing,
     easing: Easing.step0
   }
-})
+});
 
 const DrawerStack = DrawerNavigator({
   MapPage: { screen: MapPage },
@@ -28,7 +28,7 @@ const DrawerStack = DrawerNavigator({
   profile: { screen: Profile }
 }, {
   gesturesEnabled: false,
-  contentComponent: (props) => <DrawerContainer {...props} />
+  contentComponent: props => <DrawerContainer {...props} />
 })
 
 const DrawerNavigation = StackNavigator ({
