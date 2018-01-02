@@ -22,7 +22,6 @@ const noTransitionConfig = () => ({
 })
 
 const DrawerStack = DrawerNavigator({
-  splashScene: { screen: SplashScene },
   mapScene: { screen: MapScene },
   appointment: { screen: Appointment },
   profile: { screen: Profile }
@@ -84,7 +83,7 @@ const PrimaryNav = StackNavigator({
 }, {
   headerMode: 'none',
   title: 'Main',
-  initialRouteName: 'loginStack',
+  initialRouteName: 'drawerStack',
   transitionConfig: noTransitionConfig
 })
 
