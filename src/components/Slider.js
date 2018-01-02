@@ -29,14 +29,14 @@ export default class SliderOne extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 8,
+    paddingTop: 1,
     marginLeft: 10,
     marginRight: 10,
     alignItems: "stretch",
     justifyContent: "center"
   },
   text: {
-    paddingBottom: 8,
+    paddingBottom: 1,
     fontSize: 15,
     fontFamily: 'Avenir',
     color: '#42b3f4',

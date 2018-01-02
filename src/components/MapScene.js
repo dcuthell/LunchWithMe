@@ -20,48 +20,45 @@ export default class MapScene extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+        <View>
+          <TouchableOpacity onPress={() => this.setState({open: true})}>
+            <View style={styles.filterView}>
+              <Text style={styles.filterText}>FILTERS</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+        <Modal
+         offset={this.state.offset}
+         open={this.state.open}
+         modalDidOpen={() => console.log('modal did open')}
+         modalDidClose={() => this.setState({open: false})}
+         style={styles.modal}>
+         <View style={styles.whiteBox}>
+           <SliderOne />
+           <TouchableOpacity
+           style={{margin: 5}}
+           onPress={() => this.setState({offset: -100})}>
+             <Text>Move modal up</Text>
+           </TouchableOpacity>
+           <TouchableOpacity
+             style={{margin: 5}}
+             onPress={() => this.setState({offset: 0})}>
+             <Text>Reset modal position</Text>
+           </TouchableOpacity>
+           <View>
+             <TouchableOpacity
+               style={{margin: 5}}
+               onPress={() => this.setState({open: false})}>
+               <Text style={styles.footerText}>SEE MENTORS</Text>
+             </TouchableOpacity>
+           </View>
+          </View>
+        </Modal>
         <MapView
           provider={ PROVIDER_GOOGLE }
-          style={{ flex: 1, height: '100%', width: '100%' }}
+          style={styles.map}
           showsUserLocation={ true }
           region={ this.state.region }>
-
-          <View>
-            <TouchableOpacity onPress={() => this.setState({open: true})}>
-              <View style={styles.filterView}>
-                <Text style={styles.filterText}>FILTERS</Text>
-              </View>
-            </TouchableOpacity>
-            <View style={styles.modalWrap}>
-              <Modal
-                 offset={this.state.offset}
-                 open={this.state.open}
-                 modalDidOpen={() => console.log('modal did open')}
-                 modalDidClose={() => this.setState({open: false})}
-                 style={styles.modal}>
-                 <View style={styles.whiteBox}>
-                   <SliderOne />
-                   <TouchableOpacity
-                   style={{margin: 5}}
-                   onPress={() => this.setState({offset: -100})}>
-                     <Text>Move modal up</Text>
-                   </TouchableOpacity>
-                   <TouchableOpacity
-                     style={{margin: 5}}
-                     onPress={() => this.setState({offset: 0})}>
-                     <Text>Reset modal position</Text>
-                   </TouchableOpacity>
-                   <View style={styles.footer}>
-                     <TouchableOpacity
-                       style={{margin: 5}}
-                       onPress={() => this.setState({open: false})}>
-                       <Text style={styles.footerText}>SEE MENTORS</Text>
-                     </TouchableOpacity>
-                   </View>
-                 </View>
-              </Modal>
-            </View>
-          </View>
         </MapView>
       </View>
     );
@@ -72,25 +69,26 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  map: {
+    flex: 1,
+    zIndex: -1
+  },
   modal: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'flex-end',
-    height: '100%',
-    width: '100%',
-  },
-  modalWrap: {
-    height: '90%',
+    height: '50%',
     width: '100%',
   },
   filterView: {
-    marginTop: 10,
+    position: 'absolute',
+    marginTop: 45,
     backgroundColor: 'white',
     width: 70,
     height: 20,
     borderRadius: 10,
     justifyContent: 'center',
     alignSelf: 'center',
+    zIndex: 10
   },
   filterText: {
     justifyContent: 'center',
@@ -100,7 +98,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   whiteBox: {
-    height: '100%',
+    height: '50%',
     width: '100%',
   },
   footer: {
