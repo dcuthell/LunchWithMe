@@ -4,7 +4,7 @@ import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import MapView from'react-native-map-clustering';
 import Modal from 'react-native-simple-modal';
-import SliderOne from './Slider'
+import SliderOne from './Slider';
 
 export default class MapScene extends React.Component {
 
@@ -42,7 +42,7 @@ export default class MapScene extends React.Component {
           customClusterMarkerDesign =
             {(<Image style = {{width: '100%', height: '100%'}}
               source = {require('../images/lunchwithlogo_medium.png')}/>)}
-          radius = {100}
+          radius = {120}
           clusterTextSize = {36}
           maxZoomLevel={15}
           provider={ PROVIDER_GOOGLE }
@@ -63,6 +63,8 @@ export default class MapScene extends React.Component {
           <Marker coordinate={{latitude: 45.524, longitude: -122.680}}
             image={require('../images/lunchwithlogo_small.png')}/>
           <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
+            image={require('../images/lunchwithlogo_small.png')}/>
+          <Marker coordinate={{latitude: 45.516, longitude: -122.676}}
             image={require('../images/lunchwithlogo_small.png')}/>
         </MapView>
         {/* <View>
