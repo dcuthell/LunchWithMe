@@ -47,7 +47,6 @@ export default class MapScene extends React.Component {
           maxZoomLevel={15}
           provider={ PROVIDER_GOOGLE }
           style={{ flex: 1, height: '100%', width: '100%' }}
-          showsUserLocation={ true }
           region={ this.state.region }>
           <Marker coordinate={{latitude: 45.523, longitude: -122.670}} image={require('../images/lunchwithlogo_small.png')}>
             <Callout>
@@ -65,7 +64,9 @@ export default class MapScene extends React.Component {
           <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
             image={require('../images/lunchwithlogo_small.png')}/>
           <Marker coordinate={{latitude: 45.516, longitude: -122.676}}
-            image={require('../images/lunchwithlogo_small.png')}/>
+            image={require('../images/lunchwithlogo_small.png')}>
+            <Text>I am a little donutboy</Text>
+          </Marker>
         </MapView>
         {/* <View>
           <TouchableOpacity onPress={() => this.setState({open: true})}>

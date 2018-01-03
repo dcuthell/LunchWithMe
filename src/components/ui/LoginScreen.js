@@ -2,14 +2,16 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import  PropTypes  from 'prop-types';
 
-const LoginScreen = ({ userData=null, loginUser=f=>f}) => {
+const LoginScreen = ({ userData=null, loginRequest=f=>f}) => {
 
   let email, password;
   (userData) ? email=userData.email : email=null;
   (userData) ? password=userData.password : password=null;
 
   const logIn = async () => {
-    await loginUser({
+    console.log('Sending in ' + email + ' and ' + password);
+    console.log(loginRequest);
+    await loginRequest({
       email: email,
       password: password
     });

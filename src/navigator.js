@@ -2,14 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { StackNavigator, addNavigationHelpers } from 'react-navigation';
 
-// import Login from './components/containers/LoginScreen';
-import MapScene from './components/MapScene';
+import Login from './components/containers/LoginScreen';
+// import MapScene from './components/MapScene';
 import routesNames from './lib/constants/routes';
 
 //TODO: Import and fix routes
 const routes = {
-  [routesNames.MapScene]: {
-    screen: MapScene,
+  [routesNames.Login]: {
+    screen: Login,
     navigationOptions: {
       header: null,
     },
