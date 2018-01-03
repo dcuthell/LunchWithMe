@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity} from 'react-native'
 import CheckBox from 'react-native-checkbox'
-import ajax from '../ajax';
+
 
 export default class SignupScreen extends React.Component {
   user = {

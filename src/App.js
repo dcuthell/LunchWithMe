@@ -5,7 +5,6 @@ import getStore from './store';
 import navigator from './navigator';
 
 
-//TODO: Make neat
 const { navReducer, AppWithNavigationState } = navigator;
 
 export default class App extends Component {

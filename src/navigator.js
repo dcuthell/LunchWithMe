@@ -1,9 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { StackNavigator, addNavigationHelpers } from 'react-navigation';
+import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 
 import Login from './components/containers/LoginScreen';
-// import MapScene from './components/MapScene';
+import MapScene from './components/MapScene';
+import SignupScreen from './components/containers/SignupScreen';
 import routesNames from './lib/constants/routes';
 
 //TODO: Import and fix routes
@@ -14,10 +15,30 @@ const routes = {
       header: null,
     },
   },
+  [routesNames.SignupScreen]: {
+    screen: SignupScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  [routesNames.MapScene]: {
+    screen: MapScene,
+    navigationOptions: {
+      header: null,
+    },
+  },
+};
+
+const tabNavSettings = {
+  tabBarPosition: 'bottom',
+  animationEnabled: true,
+  tabBarOptions: {
+    activeTintColor: '#e91e63',
+  }
 };
 
 //Feed in routes
-const AppNavigator = StackNavigator(routes);
+const AppNavigator = TabNavigator(routes, tabNavSettings);
 
 //Set up for props
 const AppWithoutNavigationState = props => (

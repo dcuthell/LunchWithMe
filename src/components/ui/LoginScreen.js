@@ -9,8 +9,6 @@ const LoginScreen = ({ userData=null, loginRequest=f=>f}) => {
   (userData) ? password=userData.password : password=null;
 
   const logIn = async () => {
-    console.log('Sending in ' + email + ' and ' + password);
-    console.log(loginRequest);
     await loginRequest({
       email: email,
       password: password

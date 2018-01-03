@@ -1,5 +1,5 @@
 export default {
   Login: 'Login',
-  SignUp: 'SignUp',
+  SignupScreen: 'Signup',
   MapScene: 'MapScene'
 };

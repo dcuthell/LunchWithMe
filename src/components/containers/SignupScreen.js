@@ -1,8 +1,7 @@
-import LoginScreen from '../ui/LoginScreen';
+import SignupScreen from '../ui/SignupScreen';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import ActionCreators from '../../actions/index';
-
 
 const mapStatetoProps = state => ({
   userData: state.storedUserData
@@ -13,4 +12,4 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-export default connect(mapStatetoProps, mapDispatchToProps)(LoginScreen);
+export default connect(mapStatetoProps, mapDispatchToProps)(SignupScreen);
