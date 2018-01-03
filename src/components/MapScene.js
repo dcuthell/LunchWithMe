@@ -1,14 +1,30 @@
 
 import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, Image, PanResponder, Animated } from 'react-native';
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import Modal from 'react-native-simple-modal';
 import SliderOne from './Slider'
 import mapStyle from '../theme/mapStyle'
+const sliderWidth = 280;
+const itemWidth = 25;
+import MyCarousel from './Carousel'
+import Carousel from 'react-native-snap-carousel';
 
 export default class MapScene extends React.Component {
 
+imageXPos = new Animated.Value(0);
+
+  imagePanResponder = PanResponder.create({
+    onStartShouldSetPanResponder: () => true,
+    onPanResponderMove: (evt, gs) => {
+      this.imageXPos.setValue(gs.dx);
+    },
+    onPanResponderRelease: (evt, gs) => {
+      if(gs.dx < -1 * width * 0.4)
+    }
+  });
   state = {
+    imageIndex: 0,
     open: false,
     region: {
       latitude: 45.5231,
@@ -19,7 +35,6 @@ export default class MapScene extends React.Component {
   }
 
   render() {
-    console.log(JSON.stringify(mapStyle))
 
     return (
       <View style={styles.container}>
@@ -29,6 +44,13 @@ export default class MapScene extends React.Component {
               <Text style={styles.filterText}>FILTERS</Text>
             </View>
           </TouchableOpacity>
+        </View>
+        <View>
+          <Animated.Image
+            {...this.imagePanResponder.panHandlers}
+            source={require('../images/noun_1112384_cc.png')}
+            style={[{ left: this.imageXPos}, {width: 50, height: 50}]}
+          />
         </View>
         <Modal
          offset={this.state.offset}
