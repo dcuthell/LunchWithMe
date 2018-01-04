@@ -18,6 +18,7 @@ export default class MapScene extends React.Component {
     }
   }
 
+
   animate(coordinate){
     let newRegion = {
       latitude: coordinate.latitude,
@@ -29,8 +30,12 @@ export default class MapScene extends React.Component {
     console.log('cluster clicked');
   }
 
+  showStuff = stuff => {
+    console.log('latitude: ' + stuff.nativeEvent.coordinate.latitude + '\nlongitude: ' + stuff.nativeEvent.coordinate.longitude);
+  }
 
   render() {
+    console.log(this.props.children);
     return (
       <View style={styles.container}>
         <MapView
@@ -45,6 +50,8 @@ export default class MapScene extends React.Component {
           radius = {120}
           clusterTextSize = {36}
           maxZoomLevel={15}
+          moveOnMarkerPress={false}
+          onPress={e=>this.showStuff(e)}
           provider={ PROVIDER_GOOGLE }
           style={{ flex: 1, height: '100%', width: '100%' }}
           region={ this.state.region }>
