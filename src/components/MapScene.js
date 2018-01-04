@@ -3,10 +3,19 @@ import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text, Image } from 'react-native';
 import { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import MapView from'react-native-map-clustering';
-import Modal from 'react-native-simple-modal';
-import SliderOne from './Slider';
 
 export default class MapScene extends React.Component {
+
+  static navigationOptions = {
+    tabBarLabel: 'DaMap',
+    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../images/hamburger_menu_small.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
 
   state = {
     open: false,
@@ -18,9 +27,10 @@ export default class MapScene extends React.Component {
     }
   }
 
+  newMarkers = [];
 
   animate(coordinate){
-    let newRegion = {
+    const newRegion = {
       latitude: coordinate.latitude,
       longitude: coordinate.longitude,
       latitudeDelta: this.mapView.state.region.latitudeDelta - this.mapView.state.region.latitudeDelta/2,
@@ -35,7 +45,7 @@ export default class MapScene extends React.Component {
   }
 
   render() {
-    console.log(this.props.children);
+    console.log(this.props);
     return (
       <View style={styles.container}>
         <MapView
@@ -70,10 +80,6 @@ export default class MapScene extends React.Component {
             image={require('../images/lunchwithlogo_small.png')}/>
           <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
             image={require('../images/lunchwithlogo_small.png')}/>
-          <Marker coordinate={{latitude: 45.516, longitude: -122.676}}
-            image={require('../images/lunchwithlogo_small.png')}>
-            <Text>I am a little donutboy</Text>
-          </Marker>
         </MapView>
         {/* <View>
           <TouchableOpacity onPress={() => this.setState({open: true})}>
