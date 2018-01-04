@@ -8,6 +8,16 @@ import SliderOne from './Slider';
 
 export default class MapScene extends React.Component {
 
+  static navigationOptions = {
+    tabBarLabel: 'Search',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../images/ic_search.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
+
   state = {
     open: false,
     region: {
@@ -158,5 +168,12 @@ const styles = StyleSheet.create({
     fontSize: 12,
     fontFamily: 'Avenir',
     color: 'black',
+  },
+  icon: {
+    height: 30,
+    width: 30,
+  },
+  tintColor: {
+    color: 'red',
   }
 });

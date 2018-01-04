@@ -1,5 +1,6 @@
 export default {
   Login: 'Login',
-  SignupScreen: 'Signup',
-  MapScene: 'MapScene'
+  MapScene: 'MapScene',
+  Favorites: 'Favorites',
+  Profile: 'Profile',
 };

@@ -4,8 +4,9 @@ import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 
 import Login from './components/containers/LoginScreen';
 import MapScene from './components/MapScene';
-import SignupScreen from './components/containers/SignupScreen';
 import routesNames from './lib/constants/routes';
+import Profile from './components/Profile';
+import Favorites from './components/Favorites';
 
 //TODO: Import and fix routes
 const routes = {
@@ -15,14 +16,20 @@ const routes = {
       header: null,
     },
   },
-  [routesNames.SignupScreen]: {
-    screen: SignupScreen,
+  [routesNames.Favorites]: {
+    screen: Favorites,
     navigationOptions: {
       header: null,
     },
   },
   [routesNames.MapScene]: {
     screen: MapScene,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  [routesNames.Profile]: {
+    screen: Profile,
     navigationOptions: {
       header: null,
     },

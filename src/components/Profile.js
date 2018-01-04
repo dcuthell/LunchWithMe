@@ -5,6 +5,16 @@ import SliderOne from './Slider'
 import Slider from "react-native-slider";
 
 export default class Profile extends React.Component {
+  static navigationOptions = {
+
+    tabBarLabel: 'Profile',
+    tabBarIcon: ({ tintColor }) => (
+      <Image
+        source={require('../images/ic_account_circle.png')}
+        style={[styles.icon, {tintColor: tintColor}]}
+      />
+    ),
+  };
 
   render() {
     return (
