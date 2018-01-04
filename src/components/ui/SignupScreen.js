@@ -2,65 +2,70 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import  PropTypes  from 'prop-types';
 
-const SignupScreen = ({signupRequest=f=>f}) => {
+export default class SignupScreen extends React.Component {
 
-  let email, password, first_name, last_name;
+  email = '';
+  password = '';
+  first_name = '';
+  last_name = '';
 
 
-  const signUp = async () => {
-    await signupRequest({
-      email: email,
-      password: password,
-      first_name: first_name,
-      last_name: last_name,
+  signUp = async () => {
+    await this.props.signupRequest({
+      email: this.email,
+      password: this.password,
+      first_name: this.first_name,
+      last_name: this.last_name,
     });
   };
 
-  return (
-    <View style={styles.container}>
+  render() {
+    return(
+      <View style={styles.container}>
 
-      <Image source={require('../../images/lunchwithlogo_small.png')} />
+        <Image source={require('../../images/lunchwithlogo_small.png')} />
 
-      <View style={styles.accountInput}>
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='white'
-          placeholder="First Name"
-          onChangeText={text => {first_name = text;}}
-        />
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='white'
-          placeholder="Last Name"
-          onChangeText={text => {last_name = text;}}
-        />
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='white'
-          placeholder="Email Address"
-          onChangeText={text => {email = text.toLowerCase();}}
-        />
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='white'
-          placeholder="Password"
-          secureTextEntry={true}
-          autoCorrect={false}
-          onChangeText={text => {password = text.toLowerCase();}}
-        />
+        <View style={styles.accountInput}>
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="First Name"
+            onChangeText={text => {this.first_name = text;}}
+          />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="Last Name"
+            onChangeText={text => {this.last_name = text;}}
+          />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="Email Address"
+            onChangeText={text => {this.email = text.toLowerCase();}}
+          />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="Password"
+            secureTextEntry={true}
+            autoCorrect={false}
+            onChangeText={text => {this.password = text.toLowerCase();}}
+          />
+        </View>
+        <View>
+          <TouchableOpacity onPress={this.signUp}>
+            <Text style={styles.create}> Sign Me Up!
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View>
-        <TouchableOpacity onPress={signUp}>
-          <Text style={styles.create}> Sign Me Up!
-          </Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 SignupScreen.propTypes = {
-  loginUser: PropTypes.func
+  signupRequest: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
@@ -111,5 +116,3 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
   }
 });
-
-export default SignupScreen;
