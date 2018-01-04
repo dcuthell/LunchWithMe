@@ -3,4 +3,5 @@ export default {
   MapScene: 'MapScene',
   Favorites: 'Favorites',
   Profile: 'Profile',
+  Lunches: 'Lunches'
 };

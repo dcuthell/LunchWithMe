@@ -7,11 +7,12 @@ import MapScene from './components/MapScene';
 import routesNames from './lib/constants/routes';
 import Profile from './components/Profile';
 import Favorites from './components/Favorites';
+import Lunches from './components/Lunches'
 
 //TODO: Import and fix routes
 const routes = {
-  [routesNames.Login]: {
-    screen: Login,
+  [routesNames.MapScene]: {
+    screen: MapScene,
     navigationOptions: {
       header: null,
     },
@@ -22,8 +23,8 @@ const routes = {
       header: null,
     },
   },
-  [routesNames.MapScene]: {
-    screen: MapScene,
+  [routesNames.Lunches]: {
+    screen: Lunches,
     navigationOptions: {
       header: null,
     },
@@ -40,7 +41,8 @@ const tabNavSettings = {
   tabBarPosition: 'bottom',
   animationEnabled: true,
   tabBarOptions: {
-    activeTintColor: '#e91e63',
+    activeTintColor: '#0096ba',
+    tintColor: '#aabbbf',
   }
 };
 
