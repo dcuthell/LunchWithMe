@@ -93,17 +93,11 @@ export default class MapScene extends React.Component {
                modalDidClose={() => this.setState({open: false})}
                style={styles.modal}>
                <View style={styles.whiteBox}>
+                 <Text>FIND MENTORS WITH:</Text>
                  <SliderOne />
-                 <TouchableOpacity
-                 style={{margin: 5}}
-                 onPress={() => this.setState({offset: -100})}>
-                   <Text>Move modal up</Text>
-                 </TouchableOpacity>
-                 <TouchableOpacity
-                   style={{margin: 5}}
-                   onPress={() => this.setState({offset: 0})}>
-                   <Text>Reset modal position</Text>
-                 </TouchableOpacity>
+                 <Text>Practice Text</Text>
+                 <Text>Practice Text</Text>
+                 <Text>Practice Text</Text>
                  <View style={styles.footer}>
                    <TouchableOpacity
                      style={{margin: 5}}
@@ -165,6 +159,7 @@ const styles = StyleSheet.create({
   footer: {
     flex: 1,
     height: 10,
+    width: '100%',
     position: 'absolute',
     left: 0,
     right: 0,

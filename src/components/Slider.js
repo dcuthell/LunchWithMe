@@ -29,7 +29,6 @@ export default class SliderOne extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 8,
     marginLeft: 10,
     marginRight: 10,
     alignItems: "stretch",
