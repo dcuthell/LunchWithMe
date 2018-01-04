@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, Image, View } from 'react-native';
+import { Text, Image, } from 'react-native';
 import { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import MapView from 'react-native-map-clustering';
 
@@ -15,6 +15,14 @@ export default class MapScreen extends React.Component {
     }
   }
 
+  bagelMarker = (<Text></Text>);
+
+  bagelBoy = (lat, lon) => {
+    this.bagelMarker = (<Marker coordinate={{latitude: lat, longitude: lon}}
+      image={require('../../images/lunchwithlogo_small.png')}/>);
+    this.forceUpdate();
+  };
+
   animate(coordinate){
     const newRegion = {
       latitude: coordinate.latitude,
@@ -28,6 +36,7 @@ export default class MapScreen extends React.Component {
 
   showStuff = stuff => {
     console.log('latitude: ' + stuff.nativeEvent.coordinate.latitude + '\nlongitude: ' + stuff.nativeEvent.coordinate.longitude);
+    this.bagelBoy(stuff.nativeEvent.coordinate.latitude, stuff.nativeEvent.coordinate.longitude);
   }
 
   render() {
@@ -50,9 +59,6 @@ export default class MapScreen extends React.Component {
         provider={ PROVIDER_GOOGLE }
         style={{ flex: 1, height: '100%', width: '100%' }}
         region={ this.state.region }>
-        <View>
-          {this.props.children}
-        </View>
         <Marker coordinate={{latitude: 45.523, longitude: -122.670}} image={require('../../images/lunchwithlogo_small.png')}>
           <Callout>
             <Text>Hello</Text>
@@ -68,6 +74,7 @@ export default class MapScreen extends React.Component {
           image={require('../../images/lunchwithlogo_small.png')}/>
         <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
           image={require('../../images/lunchwithlogo_small.png')}/>
+        {this.bagelMarker}
       </MapView>
     );
   }
