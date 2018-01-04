@@ -133,13 +133,14 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   modalWrap: {
-    height: '10%',
+    height: '80%',
     width: '100%',
   },
   initialFilterView: {
     position: 'absolute',
-    height: 40,
-    alignSelf: 'center'
+    alignSelf: 'center',
+    height: '100%',
+    width: '100%'
   },
   filterView: {
     marginTop: 30,
@@ -149,8 +150,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     width: 70,
     height: 22,
-  },
-  mapView: {
   },
   filterText: {
     justifyContent: 'center',
