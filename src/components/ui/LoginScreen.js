@@ -2,52 +2,51 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image} from 'react-native';
 import  PropTypes  from 'prop-types';
 
-const LoginScreen = ({ userData=null, loginRequest=f=>f}) => {
+export default class LoginScreen extends React.Component {
+  email = '';
+  password = '';
 
-  let email, password;
-  (userData) ? email=userData.email : email=null;
-  (userData) ? password=userData.password : password=null;
-
-  const logIn = async () => {
-    await loginRequest({
-      email: email,
-      password: password
+  logIn = async () => {
+    await this.props.loginRequest({
+      email: this.email,
+      password: this.password
     });
   };
 
-  return (
-    <View style={styles.container}>
+  render () {
+    return (
+      <View style={styles.container}>
 
-      <Image style={styles.logo} source={require('../../images/lunchwithlogo_small.png')} />
+        <Image style={styles.logo} source={require('../../images/lunchwithlogo_small.png')} />
 
-      <View style={styles.accountInput}>
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='white'
-          placeholder="User Email"
-          onChangeText={text => {email = text.toLowerCase();}}
-        />
-        <TextInput
-          style={styles.input}
-          placeholderTextColor='white'
-          placeholder="Password"
-          onChangeText={text => {password = text.toLowerCase();}}
-          secureTextEntry={true}
-          autoCorrect={false}
-        />
+        <View style={styles.accountInput}>
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="User Email"
+            onChangeText={text => {this.email = text.toLowerCase();}}
+          />
+          <TextInput
+            style={styles.input}
+            placeholderTextColor='white'
+            placeholder="Password"
+            onChangeText={text => {this.password = text.toLowerCase();}}
+            secureTextEntry={true}
+            autoCorrect={false}
+          />
+        </View>
+        <View style={styles.footer}>
+          <TouchableOpacity onPress={this.logIn}>
+            <Text style={styles.input}>Log Me In!</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-      <View style={styles.footer}>
-        <TouchableOpacity onPress={logIn}>
-          <Text style={styles.input}>Log Me In!</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 LoginScreen.propTypes = {
-  userData: PropTypes.object,
-  loginUser: PropTypes.func
+  loginRequest: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
@@ -74,5 +73,3 @@ const styles = StyleSheet.create({
     fontFamily: 'Avenir',
   }
 });
-
-export default LoginScreen;

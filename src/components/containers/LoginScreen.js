@@ -4,9 +4,7 @@ import { bindActionCreators } from 'redux';
 import ActionCreators from '../../actions/index';
 
 
-const mapStatetoProps = state => ({
-  userData: state.storedUserData
-});
+const mapStatetoProps = state => (state);
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(ActionCreators, dispatch);
