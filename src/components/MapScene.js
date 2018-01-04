@@ -44,6 +44,7 @@ export default class MapScene extends React.Component {
     return (
       <View style={styles.container}>
         <MapView
+          style = {styles.mapsView}
           ref={ref=>this.mapView=ref}
           onClusterPress={(coordinate, markers)=>{
             this.animate(coordinate);
@@ -78,7 +79,7 @@ export default class MapScene extends React.Component {
             <Text>I am a little donutboy</Text>
           </Marker>
         </MapView>
-        {/* <View>
+        <View style = {styles.initialFilterView}>
           <TouchableOpacity onPress={() => this.setState({open: true})}>
             <View style={styles.filterView}>
               <Text style={styles.filterText}>FILTERS</Text>
@@ -113,8 +114,9 @@ export default class MapScene extends React.Component {
                </View>
             </Modal>
           </View>
-        </View> */}
+        </View>
       </View>
+      // </View>
     );
   }
 }
@@ -134,14 +136,21 @@ const styles = StyleSheet.create({
     height: '10%',
     width: '100%',
   },
+  initialFilterView: {
+    position: 'absolute',
+    height: 40,
+    alignSelf: 'center'
+  },
   filterView: {
-    marginTop: 10,
+    marginTop: 30,
     backgroundColor: 'white',
-    width: 70,
-    height: 20,
     borderRadius: 10,
     justifyContent: 'center',
     alignSelf: 'center',
+    width: 70,
+    height: 22,
+  },
+  mapView: {
   },
   filterText: {
     justifyContent: 'center',
