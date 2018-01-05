@@ -5,6 +5,7 @@ import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 import Login from './components/containers/LoginScreen';
 import MapScene from './components/MapScene';
 import SignupScreen from './components/containers/SignupScreen';
+import SwiperScreen from './components/containers/SwiperScreen';
 import routesNames from './lib/constants/routes';
 
 //TODO: Import and fix routes
@@ -17,6 +18,12 @@ const routes = {
   },
   [routesNames.SignupScreen]: {
     screen: SignupScreen,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  [routesNames.SwiperScreen]: {
+    screen: SwiperScreen,
     navigationOptions: {
       header: null,
     },
