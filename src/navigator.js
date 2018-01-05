@@ -22,12 +22,6 @@ const routes = {
       header: null,
     },
   },
-  [routesNames.SwiperScreen]: {
-    screen: SwiperScreen,
-    navigationOptions: {
-      header: null,
-    },
-  },
   [routesNames.MapScene]: {
     screen: MapScene,
     navigationOptions: {

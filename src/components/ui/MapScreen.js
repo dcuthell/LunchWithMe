@@ -1,7 +1,9 @@
 import React from 'react';
-import { Text, Image, } from 'react-native';
+import { Text, Image, View } from 'react-native';
 import { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import MapView from 'react-native-map-clustering';
+
+import SwiperScreen from '../containers/SwiperScreen';
 
 export default class MapScreen extends React.Component {
 
@@ -49,43 +51,74 @@ export default class MapScreen extends React.Component {
     this.props.setUserCoords(payload);
   }
 
+  cards = [
+    {
+      name: 'Bobby',
+      number: '201-902-1447'
+    },
+    {
+      name: 'Ti',
+      number: '201-575-3676'
+    },
+    {
+      name: 'Nicky',
+      number: '201-867-0115'
+    },
+    {
+      name: 'Tony',
+      number: '201-567-1447'
+    },
+    {
+      name: 'Timmy',
+      number: '201-575-6969'
+    },
+    {
+      name: 'Johnny',
+      number: '201-865-0231'
+    },
+  ];
+
   render() {
     console.log(this.props);
     return (
-      <MapView
-        ref={ref=>this.mapView=ref}
-        onClusterPress={(coordinate, markers)=>{
-          this.animate(coordinate);
-          console.log(markers.length);
-        }}
-        customClusterMarkerDesign =
-          {(<Image style = {{width: '100%', height: '100%'}}
-            source = {require('../../images/lunchwithlogo_medium.png')}/>)}
-        radius = {120}
-        clusterTextSize = {36}
-        maxZoomLevel={15}
-        moveOnMarkerPress={false}
-        onPress={e=>this.showStuff(e)}
-        provider={ PROVIDER_GOOGLE }
-        style={{ flex: 1, height: '100%', width: '100%' }}
-        region={ this.state.region }>
-        <Marker coordinate={{latitude: 45.523, longitude: -122.670}} image={require('../../images/lunchwithlogo_small.png')}>
-          <Callout>
-            <Text>Hello</Text>
-          </Callout>
-        </Marker>
-        <Marker coordinate={{latitude: 45.524, longitude: -122.672}}
-          image={require('../../images/lunchwithlogo_small.png')}/>
-        <Marker coordinate={{latitude: 45.526, longitude: -122.676}}
-          image={require('../../images/lunchwithlogo_small.png')}/>
-        <Marker coordinate={{latitude: 45.526, longitude: -122.678}}
-          image={require('../../images/lunchwithlogo_small.png')}/>
-        <Marker coordinate={{latitude: 45.524, longitude: -122.680}}
-          image={require('../../images/lunchwithlogo_small.png')}/>
-        <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
-          image={require('../../images/lunchwithlogo_small.png')}/>
-        {this.bagelMarker}
-      </MapView>
+      <View style={{flex: 1}}>
+        <MapView
+          ref={ref=>this.mapView=ref}
+          onClusterPress={(coordinate, markers)=>{
+            this.animate(coordinate);
+            console.log(markers.length);
+          }}
+          customClusterMarkerDesign =
+            {(<Image style = {{width: '100%', height: '100%'}}
+              source = {require('../../images/lunchwithlogo_medium.png')}/>)}
+          radius = {120}
+          clusterTextSize = {36}
+          maxZoomLevel={15}
+          moveOnMarkerPress={false}
+          onPress={e=>this.showStuff(e)}
+          provider={ PROVIDER_GOOGLE }
+          style={{ height: '80%', width: '100%' }}
+          region={ this.state.region }>
+          <Marker coordinate={{latitude: 45.523, longitude: -122.670}} image={require('../../images/lunchwithlogo_small.png')}>
+            <Callout>
+              <Text>Hello</Text>
+            </Callout>
+          </Marker>
+          <Marker coordinate={{latitude: 45.524, longitude: -122.672}}
+            image={require('../../images/lunchwithlogo_small.png')}/>
+          <Marker coordinate={{latitude: 45.526, longitude: -122.676}}
+            image={require('../../images/lunchwithlogo_small.png')}/>
+          <Marker coordinate={{latitude: 45.526, longitude: -122.678}}
+            image={require('../../images/lunchwithlogo_small.png')}/>
+          <Marker coordinate={{latitude: 45.524, longitude: -122.680}}
+            image={require('../../images/lunchwithlogo_small.png')}/>
+          <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
+            image={require('../../images/lunchwithlogo_small.png')}/>
+          {this.bagelMarker}
+        </MapView>
+        <SwiperScreen cards={this.cards} style={{ height: '20%', width: '100%' }}>
+        </SwiperScreen>
+      </View>
     );
   }
 }
