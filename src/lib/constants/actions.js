@@ -6,6 +6,7 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const SIGNUP_USER = 'SIGNUP_USER';
 export const LOGIN_REQUEST_SUCCESS = 'LOGIN_REQUEST_SUCCESS';
 export const LOGIN_REQUEST_FAILURE = 'LOGIN_REQUEST_FAILURE';
+export const SET_USER_COORDS = 'SET_USER_COORDS';
 
 // errors
 export const GENERIC_ERROR = 'GENERIC_ERROR';

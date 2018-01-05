@@ -1,12 +1,12 @@
 import { combineReducers } from 'redux';
 
-import login from './login';
+import userCoords from './userCoords';
 
-export const reducers = { login };
+export const reducers = { userCoords };
 
 export default function getRootReducer(navReducer) {
   return combineReducers({
     nav: navReducer,
-    //...reducers,
+    ...reducers,
   });
 }

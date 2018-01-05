@@ -18,9 +18,15 @@ export default class MapScreen extends React.Component {
   bagelMarker = (<Text></Text>);
 
   bagelBoy = (lat, lon) => {
-    this.bagelMarker = (<Marker coordinate={{latitude: lat, longitude: lon}}
-      image={require('../../images/lunchwithlogo_small.png')}/>);
-    this.forceUpdate();
+    this.bagelMarker = (<Marker
+      coordinate={{latitude: lat, longitude: lon}}
+      image={require('../../images/watch_later.png')}
+      cluster={false}
+      onDragStart={e => console.log('start' + e.nativeEvent.coordinate.latitude)}
+      onDrag={e => console.log('drag' + e.nativeEvent.coordinate.latitude)}
+      onDragEnd={e=> {console.log('ended'); this.props.setUserCoords({lat: e.nativeEvent.coordinate.latitude, lon: e.nativeEvent.coordinate.longitude});}}
+      draggable
+    />);
   };
 
   animate(coordinate){
@@ -35,8 +41,12 @@ export default class MapScreen extends React.Component {
   }
 
   showStuff = stuff => {
-    console.log('latitude: ' + stuff.nativeEvent.coordinate.latitude + '\nlongitude: ' + stuff.nativeEvent.coordinate.longitude);
-    this.bagelBoy(stuff.nativeEvent.coordinate.latitude, stuff.nativeEvent.coordinate.longitude);
+    const lat = stuff.nativeEvent.coordinate.latitude;
+    const lon = stuff.nativeEvent.coordinate.longitude;
+    console.log('latitude: ' + lat + '\nlongitude: ' + lon);
+    this.bagelBoy(lat, lon);
+    const payload = { lat, lon };
+    this.props.setUserCoords(payload);
   }
 
   render() {
