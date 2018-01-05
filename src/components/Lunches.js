@@ -20,8 +20,7 @@ export default class Lunches extends React.Component {
   render() {
     return (
 
-      <View><Text>Favorites Page</Text>
-      </View>
+      <Image ></Image>
     );
   }
 }

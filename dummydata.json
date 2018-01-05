@@ -124,14 +124,13 @@
 }
 
 
-
 "type": "user",
 "id": "4",
 "attributes": {
-    "availability": null,
-    "company": null,
+    "availability": "Tuesday",
+    "company": "Epicodus",
     "created_at": "2017-12-15T23:18:01Z",
-    "description": "",
+    "description": "10 year veteran developer",
     "email": "bob@jones.com",
     "exp_level": 0,
     "first_name": "bob",
@@ -139,7 +138,7 @@
     "lat": 0,
     "long": 0,
     "profile_image_url": "",
-    "roles": null,
-    "skills": null,
+    "roles": "Developer",
+    "skills": "Java",
     "updated_at": "2017-12-15T23:18:01Z"
 },
