@@ -18,7 +18,7 @@ export default class SwiperScreen extends React.Component {
     const stuff = [];
     cards.map(card => {
       stuff.push(
-        <View style={styles.slide1} key={card.number}>
+        <View style={styles.slide1} key={card.key}>
           <Text style={styles.text}>{card.name}</Text>
         </View>
       );

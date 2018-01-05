@@ -43,38 +43,66 @@ export default class MapScreen extends React.Component {
   }
 
   showStuff = stuff => {
-    const lat = stuff.nativeEvent.coordinate.latitude;
-    const lon = stuff.nativeEvent.coordinate.longitude;
-    console.log('latitude: ' + lat + '\nlongitude: ' + lon);
-    this.bagelBoy(lat, lon);
-    const payload = { lat, lon };
-    this.props.setUserCoords(payload);
+    if(stuff.nativeEvent.action == 'marker-press'){
+      console.log('howdy');
+    }else{
+      const lat = stuff.nativeEvent.coordinate.latitude;
+      const lon = stuff.nativeEvent.coordinate.longitude;
+      console.log(stuff.nativeEvent);
+      console.log('latitude: ' + lat + '\nlongitude: ' + lon);
+      this.bagelBoy(lat, lon);
+      const payload = { lat, lon };
+      this.props.setUserCoords(payload);
+    }
+  }
+
+  makeMarkersFromCards(cards) {
+    const markers = [];
+    cards.map(card => {
+      markers.push(
+        <Marker key={card.key} coordinate={{latitude: `${card.coordinates.latitude}`, longitude: `${card.coordinates.longitude}`}}
+          image={require('../../images/lunchwithlogo_small.png')}/>
+      );
+    });
+    return markers;
   }
 
   cards = [
     {
       name: 'Bobby',
-      number: '201-902-1447'
+      key: 0,
+      number: '201-902-1447',
+      coordinates: {latitude: 45.523, longitude: -122.670}
     },
     {
       name: 'Ti',
-      number: '201-575-3676'
+      key: 1,
+      number: '201-575-3676',
+      coordinates: {latitude: 45.524, longitude: -122.672}
     },
     {
       name: 'Nicky',
-      number: '201-867-0115'
+      key: 2,
+      number: '201-867-0115',
+      coordinates: {latitude: 45.526, longitude: -122.676}
     },
     {
       name: 'Tony',
-      number: '201-567-1447'
+      key: 3,
+      number: '201-567-1447',
+      coordinates: {latitude: 45.526, longitude: -122.678}
     },
     {
       name: 'Timmy',
-      number: '201-575-6969'
+      key: 4,
+      number: '201-575-6969',
+      coordinates: {latitude: 45.524, longitude: -122.680}
     },
     {
       name: 'Johnny',
-      number: '201-865-0231'
+      key: 5,
+      number: '201-865-0231',
+      coordinates: {latitude: 45.522, longitude: -122.682}
     },
   ];
 
@@ -86,7 +114,7 @@ export default class MapScreen extends React.Component {
           ref={ref=>this.mapView=ref}
           onClusterPress={(coordinate, markers)=>{
             this.animate(coordinate);
-            console.log(markers.length);
+            console.log(markers);
           }}
           customClusterMarkerDesign =
             {(<Image style = {{width: '100%', height: '100%'}}
@@ -99,7 +127,7 @@ export default class MapScreen extends React.Component {
           provider={ PROVIDER_GOOGLE }
           style={{ height: '80%', width: '100%' }}
           region={ this.state.region }>
-          <Marker coordinate={{latitude: 45.523, longitude: -122.670}} image={require('../../images/lunchwithlogo_small.png')}>
+          {/* <Marker key={69} coordinate={{latitude: 45.523, longitude: -122.670}} image={require('../../images/lunchwithlogo_small.png')}>
             <Callout>
               <Text>Hello</Text>
             </Callout>
@@ -113,7 +141,8 @@ export default class MapScreen extends React.Component {
           <Marker coordinate={{latitude: 45.524, longitude: -122.680}}
             image={require('../../images/lunchwithlogo_small.png')}/>
           <Marker coordinate={{latitude: 45.522, longitude: -122.682}}
-            image={require('../../images/lunchwithlogo_small.png')}/>
+            image={require('../../images/lunchwithlogo_small.png')}/> */}
+          {this.makeMarkersFromCards(this.cards)}
           {this.bagelMarker}
         </MapView>
         <SwiperScreen cards={this.cards} style={{ height: '20%', width: '100%' }}>
