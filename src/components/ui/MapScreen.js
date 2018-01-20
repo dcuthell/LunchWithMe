@@ -60,7 +60,7 @@ export default class MapScreen extends React.Component {
     const markers = [];
     cards.map(card => {
       markers.push(
-        <Marker key={card.key} coordinate={{latitude: `${card.coordinates.latitude}`, longitude: `${card.coordinates.longitude}`}}
+        <Marker key={card.key} coordinate={{latitude: card.coordinates.latitude, longitude: card.coordinates.longitude}}
           image={require('../../images/lunchwithlogo_small.png')}/>
       );
     });
