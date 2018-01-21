@@ -6,7 +6,7 @@ import ActionCreators from '../../actions/index';
 import { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import MapView from 'react-native-map-clustering';
 
-import SwiperScreen from '../../components/containers/SwiperScreen';
+import SwiperScreen from '../SwiperScreen';
 import getViewCoords from '../../selectors/viewCoords';
 import getUserCoords from '../../selectors/userCoords';
 import styles from './styles';
