@@ -115,7 +115,7 @@ class MapScreen extends React.Component {
   ];
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     //console.log(this.viewSpace);
     return (
       <View style={styles.container}>

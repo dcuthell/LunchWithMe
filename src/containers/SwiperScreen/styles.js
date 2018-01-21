@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   wrapper: {
+    flex: 1,
   },
   slide1: {
     flex: 1,
@@ -23,7 +24,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#92BBD9',
   },
   text: {
-    color: '#fff',
+    color: 'black',
     fontSize: 30,
     fontWeight: 'bold',
   }
