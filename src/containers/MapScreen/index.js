@@ -6,9 +6,10 @@ import ActionCreators from '../../actions/index';
 import { PROVIDER_GOOGLE, Marker, Callout } from 'react-native-maps';
 import MapView from 'react-native-map-clustering';
 
-import SwiperScreen from '../containers/SwiperScreen';
+import SwiperScreen from '../../components/containers/SwiperScreen';
 import getViewCoords from '../../selectors/viewCoords';
 import getUserCoords from '../../selectors/userCoords';
+import styles from './styles';
 
 class MapScreen extends React.Component {
 
@@ -117,7 +118,7 @@ class MapScreen extends React.Component {
     console.log(this.props);
     //console.log(this.viewSpace);
     return (
-      <View style={{flex: 1}}>
+      <View style={styles.container}>
         <MapView
           ref={ref=>this.mapView=ref}
           onClusterPress={(coordinate, markers)=>{

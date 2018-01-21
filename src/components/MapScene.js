@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
 import { Marker } from 'react-native-maps';
 
-import MapScreen from './containers/MapScreen';
+import MapScreen from './MapScreen';
 
 
 
@@ -32,7 +32,7 @@ export default class MapScene extends React.Component {
   // }
 
   render() {
-    console.log(this.props);
+    //console.log(this.props);
     return (
       <View style={styles.container}>
         <MapScreen someString={'Hey Buddy'}>

@@ -1,6 +1,6 @@
 export default {
   Login: 'Login',
   SignupScreen: 'Signup',
-  MapScene: 'MapScene',
+  MapScreen: 'MapScreen',
   SwiperScreen: 'SwiperScreen'
 };
