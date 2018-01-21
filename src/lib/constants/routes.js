@@ -1,5 +1,5 @@
 export default {
-  Login: 'Login',
+  LoginScreen: 'LoginScreen',
   SignupScreen: 'Signup',
   MapScreen: 'MapScreen',
   SwiperScreen: 'SwiperScreen'

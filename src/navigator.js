@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 
-import Login from './components/containers/LoginScreen';
+import LoginScreen from './containers/LoginScreen';
 import MapScreen from './containers/MapScreen'
 import SignupScreen from './components/containers/SignupScreen';
 import SwiperScreen from './components/containers/SwiperScreen';
@@ -10,22 +10,22 @@ import routesNames from './lib/constants/routes';
 
 //TODO: Import and fix routes
 const routes = {
-  [routesNames.Login]: {
-    screen: Login,
+  [routesNames.LoginScreen]: {
+    screen: LoginScreen,
     navigationOptions: {
-      header: null,
+      tabBarLabel: 'Login',
     },
   },
   [routesNames.SignupScreen]: {
     screen: SignupScreen,
     navigationOptions: {
-      header: null,
+      tabBarLabel: 'Sign Up',
     },
   },
   [routesNames.MapScreen]: {
     screen: MapScreen,
     navigationOptions: {
-      tabBarLabel: 'Da Map',
+      tabBarLabel: 'Browse Map',
     },
   },
 };
