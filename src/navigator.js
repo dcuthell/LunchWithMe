@@ -4,7 +4,7 @@ import { TabNavigator, addNavigationHelpers } from 'react-navigation';
 
 import LoginScreen from './containers/LoginScreen';
 import MapScreen from './containers/MapScreen'
-import SignupScreen from './components/containers/SignupScreen';
+import SignupScreen from './containers/SignupScreen';
 import SwiperScreen from './components/containers/SwiperScreen';
 import routesNames from './lib/constants/routes';
 
